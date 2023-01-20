@@ -1,0 +1,483 @@
+:root {
+    --clr-1: blue;
+    --clr-2: #0060fc;
+    --clr-3: #000000;
+    --clr-4: #ff0000;
+    --clr-5: #11ff00;
+    --clr-6: #ffffff;
+    --clr-7: rgba(255, 0, 0, 0.322);
+    --clr-8: rgba(0, 255, 47, 0.322);
+}
+
+*,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    width: auto;
+    background-color: var(--clr-2);
+    color: var(--clr-3);
+    font-weight: 400;
+    transition: all ease 0.5s;
+    padding: 10px;
+    overflow: hidden;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--clr-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .box-1 {
+    /* display: none; */
+    font-size: 35px;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    background-color: var(--clr-6);
+    letter-spacing: 2px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--clr-2);
+    font-weight: bolder;
+    display: block;
+}
+
+main .box-1:hover {
+    transform: scale(1.1);
+}
+
+
+/* == ==  == == */
+
+main .Lf-box {
+    height: auto;
+    max-width: auto;
+    /* background-color: white; */
+    padding: 10px;
+    display: none;
+}
+
+main .Lf-box .Lf-base-box {
+    height: auto;
+    max-width: auto;
+    /* background-color: var(--clr-6); */
+    padding: 10px;
+}
+
+main .Lf-box .Lf-base-box form {
+    height: auto;
+    max-width: auto;
+    /* background-color: var(--clr-6); */
+    padding: 10px;
+}
+
+main .Lf-box .Lf-base-box form fieldset {
+    background-color: var(--clr-6);
+    border: none;
+    padding: 20px;
+}
+
+main .Lf-box .Lf-base-box form .detail-title {
+    height: auto;
+    width: auto;
+    padding: 5px;
+    background-color: var(--clr-6);
+    text-align: center;
+}
+
+main .Lf-box .Lf-base-box form h1 {
+    background-color: var(--clr-6);
+    font-size: 50px;
+    font-weight: lighter;
+    padding: 0px;
+}
+
+main .Lf-box .Lf-base-box form .input-feild {
+    height: 100px;
+    width: auto;
+    padding: 5px;
+    background-color: var(--clr-6);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+main .Lf-box .Lf-base-box form .input-feild input {
+    width: 400px;
+    background-color: var(--clr-6);
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid gray;
+}
+
+main .Lf-box .Lf-base-box form .input-feild input:focus {
+    background-color: #0062ff22;
+    border-color: var(--clr-2);
+}
+
+main .Lf-box .Lf-base-box form .verify-btn {
+    height: auto;
+    width: 150px;
+    padding: 5px;
+    font-size: 25px;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    float: right;
+    background-color: rgba(213, 213, 213, 0.619);
+}
+
+
+/* info box */
+
+main .info-box {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    background-color: var(--clr-6);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(49, 49, 49, 0.429);
+    display: block;
+    display: none;
+}
+
+main .info-box .userInfo {
+    height: auto;
+    width: auto;
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .info-box .userInfo .userimg {
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    border-left: 0.2px solid rgba(173, 173, 173, 0.287);
+    border-top: 0.2px solid rgba(173, 173, 173, 0.287);
+    box-shadow: 5px 0px 10px 0px rgb(217, 217, 217);
+}
+
+main .info-box .userInfo .userimg img {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+}
+
+main .info-box .userInfo .userinfo-box {
+    height: auto;
+    width: auto;
+    padding: 5px;
+    display: grid;
+    justify-content: center;
+    background-color: white;
+}
+
+main .info-box .userInfo .userinfo-box span {
+    font-weight: 600;
+}
+
+main .info-box .info-title {
+    background: none;
+    width: 100%;
+    padding: 5px;
+    font-size: 25px;
+    border-bottom: 2px solid var(--clr-3);
+}
+
+main .info-box .info-title span {
+    font-weight: bolder;
+    color: var(--clr-3);
+}
+
+main .info-box .info-list {
+    height: auto;
+    width: auto;
+    padding: 5px;
+}
+
+main .info-box .info-list .info {
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--clr-3);
+}
+
+main .info-box .info-list .info:nth-child(6) span {
+    color: var(--clr-1);
+}
+
+main .info-box .info-list .info span {
+    color: var(--clr-2);
+    font-weight: bolder;
+}
+
+main .buttons {
+    padding: 10px;
+    height: auto;
+    width: 100%;
+}
+
+main .buttons button {
+    outline: none;
+    border: none;
+    color: var(--clr-6);
+    padding: 10px;
+    height: auto;
+    width: auto;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+main .buttons button:nth-child(2) {
+    float: right;
+    background-color: rgba(213, 213, 213, 0.619);
+}
+
+
+/* Quiz Box */
+
+main .quiz_box {
+    height: auto00px;
+    width: 80%;
+    background-color: var(--clr-6);
+    padding: 5px;
+    box-shadow: 0px 0px 5px 0px var(--clr-3);
+    border-radius: 5px;
+    display: none;
+}
+
+main .quiz_box header {
+    height: auto;
+    width: auto;
+    /* padding: 5px; */
+    background-color: var(--clr-6);
+    border-bottom: 1px solid #8e8e8e6a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .quiz_box header .bind-header-child1 {
+    height: 100%;
+    width: 100%;
+    background-color: var(--clr-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .quiz_box header .title {
+    height: auto;
+    width: auto;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: var(--clr-6);
+}
+
+main .quiz_box header .timer {
+    padding: 10px;
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 98, 255, 0.2);
+    border-radius: 6px;
+    gap: 5px;
+}
+
+main .quiz_box header .timer .time_left_txt,
+main .quiz_box header .timer .timer_sec {
+    color: var(--clr-3);
+    height: auto;
+    width: auto;
+    padding: 5px;
+    background: none;
+    font-size: larger;
+    font-weight: 600;
+}
+
+main .quiz_box header .time_line {
+    width: 100%;
+    height: 5px;
+    padding: 0px;
+    border-radius: 2px;
+    background-color: var(--clr-5);
+}
+
+main .quiz_box section {
+    margin-top: 10px;
+    border-radius: 6px;
+    height: auto;
+    background-color: var(--clr-6);
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+main .quiz_box section .que_text {
+    font-size: larger;
+    font-weight: 400;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    background-color: rgba(192, 192, 192, 0.312);
+    border-radius: 5px;
+}
+
+main .quiz_box section .option_list {
+    /* background-color: rgba(192, 192, 192, 0.312); */
+    border-radius: 5px;
+    padding: 5px;
+    height: auto;
+    width: auto;
+    margin-top: 20px;
+    font-size: larger;
+    font-weight: 500;
+    background: none;
+}
+
+main .quiz_box section .option_list ul {
+    list-style-type: none;
+    height: auto;
+    width: 100%;
+    background-color: #ff0000;
+    padding: 0px;
+    background: none;
+}
+
+main .quiz_box section .option_list ul li {
+    height: auto;
+    width: auto;
+    padding: 5px;
+    background: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+main .quiz_box section .option_list ul li input[type='radio'] {
+    height: 20px;
+    width: 20px;
+}
+
+main .quiz_box section .option_list ul li label {
+    height: auto;
+    width: auto;
+    padding: 0px;
+    font-size: larger;
+    background: none;
+}
+
+main .quiz_box footer {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--clr-6);
+    border-top: 1px solid #8e8e8e6a;
+}
+
+main .quiz_box footer .total_que {
+    background-color: var(--clr-6);
+    font-weight: bolder;
+    color: gray;
+}
+
+main .quiz_box footer .total_que span {
+    color: gray;
+    font-weight: lighter;
+}
+
+main .quiz_box footer button {
+    outline: none;
+    border: none;
+    color: var(--clr-6);
+    font-weight: 500;
+    width: 100px;
+}
+
+
+/* Display Box */
+
+main .display-box {
+    height: auto;
+    width: 80%;
+    background-color: var(--clr-6);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+}
+
+main .display-box .score-box {
+    height: 150px;
+    width: 100%;
+    background: none;
+}
+
+main .display-box .btn-box {
+    height: auto;
+    width: 100%;
+    background-color: var(--clr-6);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+main .display-box .btn-box button {
+    width: 150px;
+    background-color: var(--clr-2);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--clr-6);
+    outline: none;
+    border: none;
+}
+
+main .display-box .score-box h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    background: none;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+#score {
+    background-color: var(--clr-6);
+    color: #000000;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+}
+
+main .buttons .info-title,
+.info-list,
+span,
+.info,
+.buttons {
+    background: none;
+}

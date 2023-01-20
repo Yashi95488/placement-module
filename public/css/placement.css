@@ -1,0 +1,148 @@
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+      text-transform: uppercase;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: greenyellow;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .welcome
+  {
+      border: 3px solid black;
+    border-radius: 4px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px #ff0000;
+      padding-top: 50px;
+      padding-left: 30%;
+      padding-right: 10%;
+      padding-bottom: 10px;
+      background-image: url(index2.jpg);
+      text-align: center;
+      background-repeat: repeat-x;
+      
+  }
+  .nav-bar{
+      display: inline-block;
+      border: 2px solid;
+      background-color: blanchedalmond;
+      width: 100%;
+  }
+  .name
+  {
+      text-transform: uppercase;
+      border: 2px solid;
+      float: right;
+      position: relative;
+      margin-left: 1000px;
+      margin-right: 30px;
+     padding: 5px;
+      margin-top: 8px;
+      background-color: floralwhite;
+      text-decoration-color: black;
+      
+  }
+  body{
+      background-color: rgb(204,255,255);
+  }
+  .box{
+      border: 2px solid black;
+      border-radius: 5px;
+      margin-top: 200px;
+      margin-bottom: 200px;
+      margin-left: 100px;
+      margin-right: 100px;
+      padding-left: 20%;
+      padding-right: 20%;
+      padding-top: 200px;
+      padding-bottom: 100px;
+      text-transform: uppercase;
+      }
+  input{
+      padding-top: 10px;
+      padding-left: 20px;
+  }
+  .submit-button{
+          margin-left: 400px;
+      margin-top: 20px;
+      margin-right: 180px;
+      text-transform: uppercase;
+      padding-right: 50px;
+      padding-left: 10px;
+  }
+  table{
+      border: 1px solid black;
+      margin-top: 50px;
+  }
+  tr,td{
+      border: 1px solid black;
+      padding-left: 60px;
+      padding-right: 50px;
+      text-transform: uppercase;
+      background-color: rgb(128,223,255);
+  }
+  .heading{
+      background-color: black;
+      text-decoration-color: aliceblue;
+      color: antiquewhite;
+  }
+  .upload{
+      border: 2px solid black;
+      text-transform: uppercase;
+      margin-top:100px;
+      margin-left: 30%;
+      margin-right: 30%;
+      padding-top: 50px;
+      padding-right: 50px;
+      padding-left: 50px;
+      padding-bottom: 50px;
+  }
+  .getc{
+         border: 2px solid black;
+      text-transform: uppercase;
+      margin-top: 20px;
+      
+      margin-right: 30%;
+      padding-top: 50px;
+      padding-right: 20px;
+      padding-left: 50px;
+      padding-bottom: 50px;
+      background-color: azure;
+      color: black;
+      border-radius: 50px 20px;
+  }
+  .content{
+      border: 2px solid black;
+      text-transform: uppercase;
+      width: 50%;
+      padding-left: 10px;
+      
+      color: darkmagenta;
+  }
+  

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz App</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Jquery Lib link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- JQuery File -->
+    <script>
+        $(document).ready(function() {
+            // start button Functioning
+            $('.box-1').click(function() {
+                $(this).hide();
+                $('.Lf-box').show()
+            });
+            // Verifying user ID and Password
+            $('.input').change(function() {
+                if ($('#input1').val() != '' && $('#input2').val() != '') {
+                    $('#sub').attr('disabled', false);
+                    $('#sub').css("background-color", "#0060fc");
+                } else {
+                    $('#sub').attr('disabled', true);
+                    $('#sub').css("background-color", "rgba(213, 213, 213, 0.619)");
+                }
+            });
+            $('#sub').click(function() {
+                var val1 = $('#input1').val();
+                var val2 = $('#input2').val();
+                if (val1.match("Vishesh") && val2.match("1234")) {
+                    $('#input1').css({
+                        "background-color": "rgba(0, 255, 47, 0.322)",
+                        "border-bottom": "none"
+                    });
+                    $('#input2').css({
+                        "background-color": "rgba(0, 255, 47, 0.322)",
+                        "border-bottom": "none"
+                    });
+                    $('#sub').css("background-color", "#11ff00");
+                    setTimeout(function() {
+                        $('.Lf-box').hide();
+                        $('input').css({
+                            "background-color": "#ffffff",
+                            "border-bottom": "2px solid gray"
+                        });
+
+                        $('#sub').css({
+                            "background-color": "#0060fc"
+                        });
+                        $('input').val("");
+                        $('.info-box').show();
+                        $.fn.myfun();
+                    }, 5000);
+                    // console.log("true");
+                } else {
+                    // console.log("false");
+                    $('input').val("");
+                }
+            });
+            $.fn.myfun = function() {
+                    $('.info-box').show(function() {
+                        var cd = $('#counter');
+                        var c = parseInt(cd.text(), 10);
+                        var interv = setInterval(function() {
+                            c--;
+                            cd.html(c);
+                            if (c == 0) {
+                                clearInterval(interv);
+                                $('.continue').attr("disabled", false);
+                                $('.continue').css("background-color", "#0060fc");
+                            } else {
+                                $('.continue').attr("disabled", true);
+                            }
+                        }, 1000);
+                    });
+                }
+                // Exit Quiz button Functioning
+            $('.quit').click(function() {
+                $('.box-1').show();
+                $('.info-box').hide();
+            });
+            // Continuing the function
+            $('.continue').click(function() {
+                $('.info-box').hide();
+                $('.quiz_box').show();
+            });
+            $('#logout').click(function() {
+                $('.display-box').hide();
+                $('.box-1').show();
+            });
+        });
+    </script>
+</head>
+
+<body onkeydown="if(!event.target.matches('input')&&!event.target.matches('textarea'))return!1" oncontextmenu="return!1" onselectstart="return!1" ondragstart="return!1">
+    <main>
+        <!-- start box -->
+        <div class="box-1">
+            START
+        </div>
+
+        <!-- Login box -->
+        <div class="Lf-box">
+            <div class="Lf-base-box">
+                <form action="#" method="post" autocomplete="off">
+                    <fieldset>
+                        <!-- <legend>Detail form</legend> -->
+                        <div class="detail-title">
+                            <h1>Login</h1>
+                        </div>
+                        <div class="input-feild">
+                            <input type="email" name="email" id="input1" class="input" placeholder="Email" required>
+                        </div>
+                        <div class="input-feild">
+                            <input type="text" name="text" id="input2" class="input" placeholder="Password" required>
+                        </div>
+                        <button class="verify-btn" title="" name="verifybtn" id="sub" type="button" disabled>Verify</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <!-- info box -->
+        <div class="info-box">
+
+            <div class="userInfo">
+                <div class="userimg">
+                    <img src="../images/images.png" alt="NA">
+                </div>
+                <div class="userinfo-box">
+                    <span> Vishesh Saxena </span>
+                    <span> visheshsaxena7777@gmail.com </span>
+                </div>
+            </div>
+
+            <div class="info-title"><span>Some Rules of this Quiz</span></div>
+            <div class="info-list">
+                <div class="info">1. You will have only <span>120 seconds</span> per each question.</div>
+                <div class="info">2. Once you select your answer, it can't be undone.</div>
+                <div class="info">3. You can't select any option once time goes off.</div>
+                <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+                <div class="info">5. You'll get points on the basis of your correct answers.</div>
+                <div class="info"> Starts in Time : <span class="counter" id="counter"> 60 </span> s </div>
+            </div>
+            <div class="buttons">
+                <button class="quit">Exit Quiz</button>
+                <button class="continue">Continue</button>
+            </div>
+        </div>
+
+        <!-- Quiz Box -->
+        <div class="quiz_box">
+            <header>
+                <div class="bind-header-child1">
+                    <div class="title">Awesome Quiz Application</div>
+                    <div class="timer">
+                        <div class="time_left_txt">Time Left</div>
+                        <div class="timer_sec">120</div>
+                    </div>
+                </div>
+                <div class="time_line"></div>
+            </header>
+            <section>
+                <div class="que_text" id="question">
+                    <!-- Here I've inserted question from JavaScript -->
+                </div>
+                <div class="option_list">
+                    <ul>
+                        <li>
+                            <input type="radio" name="answer" id="ans1" class="answer">
+                            <label for="ans1" id="opt1">Hello</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" id="ans2" class="answer">
+                            <label for="ans2" id="opt2">Hello</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" id="ans3" class="answer">
+                            <label for="ans3" id="opt3">Hello</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" id="ans4" class="answer">
+                            <label for="ans4" id="opt4">Hello</label>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- footer of Quiz Box -->
+            <footer>
+                <div class="total_que">
+                    Questions <span id="num">1</span id="outOf"> of <span>5</span>
+                    <!-- Here I've inserted Question Count Number from JavaScript -->
+                </div>
+                <button class="next_btn" id="next_btn">Next</button>
+            </footer>
+        </div>
+
+        <!-- Display score box -->
+        <div class="display-box" id="display">
+            <div class="score-box">
+                <h1 id="msg">Congratulation</h1>
+                <p id="score"></p>
+            </div>
+            <div class="btn-box">
+                <button type="button" name="exit" title="button_Exit" id="logout">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+
+<!-- JavaScript File -->
+<% var qui=quiz; %>
+<script>
+    // array of object
+    const quizDB = "<%= qui %>";
+
+    const question = document.querySelector('#question');
+    const o1 = document.querySelector('#opt1');
+    const o2 = document.querySelector('#opt2');
+    const o3 = document.querySelector('#opt3');
+    const o4 = document.querySelector('#opt4');
+    const next = document.querySelector('#next_btn');
+    const display = document.querySelector('#display');
+    const s = document.querySelector('#score');
+    const msg = document.querySelector('#msg');
+
+    // querySelectorAll is chossen because their are multiple classes of input[type=radio]
+    const answers = document.querySelectorAll('.answer');
+    const outof = document.querySelector('#num');
+
+    const quiz_box = document.querySelector('.quiz_box');
+
+
+    let questionCount = 0;
+    let score = 0;
+
+    // fuction for loading the Question
+    const loadQuestion = () => {
+        let c = questionCount + 1;
+        outof.innerText = c;
+        if (c == 5) {
+            next.innerText = "Submit";
+        }
+        // 'quizDB[]'is an array of objects which contains Question , Options and Answer.
+        // so a variable is created 'objectElements' which will take all the value of quizDB[] values at array index set by a declared variable questionCount.
+        const objectElements = quizDB[questionCount];
+
+        //setting the Question 
+        question.innerText = objectElements.question;
+
+        //setting the Options 
+        o1.innerText = objectElements.a;
+        o2.innerText = objectElements.b;
+        o3.innerText = objectElements.c;
+        o4.innerText = objectElements.d;
+    }
+
+
+    const getCheckedAnswer = () => {
+        let answer = 0;
+
+        // 1. 'answers' variable is already having values of all input[type=radio].
+        // 2. now for Each option in 'answers' variable we will fetch the data and store it in curAnsEle variable.
+        // 3. now for Each curAnsEle in loop if() will check that which input[type=radio] button is been checked.
+        // 4. then it will fetch the id of the particular Element. 
+        answers.forEach((curAnsELe) => {
+            if (curAnsELe.checked) {
+                answer = curAnsELe.id;
+            }
+        });
+        return answer;
+    };
+
+    // deselecting the option which already has been selected
+    const deselectAll = () => {
+        answers.forEach((curAnsELe) => curAnsELe.checked = false);
+    };
+
+    // function called for loading function
+    loadQuestion();
+
+    next.addEventListener('click', () => {
+        const checkedAnswer = getCheckedAnswer();
+        console.log(checkedAnswer);
+
+        // calling funtion for Deselecting the radio buttons
+        deselectAll();
+
+        // condition for Matching the Answers
+        if (checkedAnswer === quizDB[questionCount].ans) {
+            score++;
+        }
+
+        // incrementing the questionCount for checking number of questions remainng
+        questionCount++;
+
+        if (questionCount < quizDB.length) {
+            // calling loadQuestion()
+            loadQuestion();
+        } else {
+            quiz_box.style.display = "none";
+            display.style.display = "block";
+            msg.innerHTML = "Better Luck next Time";
+            s.innerHTML = `
+                <h3 style="background-color:white"> 
+                    <span style="background-color:white;color:gray;font-weight:700;"> Poor : </span> ${score} / ${quizDB.length} 
+                </h3>
+            `;
+            if (score < 3 && score >= 1) {
+
+            } else if (score >= 3 && score < 5) {
+                quiz_box.style.display = "none";
+                msg.innerHTML = "Better Luck next Time";
+                s.innerHTML = `
+                    <h3 style="background-color:white">  
+                        <span style="background-color:white;color:orange;font-weight:700;"> Average : </span> ${score} / ${quizDB.length} 
+                    </h3>
+                `;
+            } else if (score == 5) {
+                quiz_box.style.display = "none";
+                msg.innerHTML = "Better Luck next Time";
+                s.innerHTML = `
+                    <h3 style="background-color:white">
+                        <span style="background-color:white;color:green;font-weight:700;"> Great Job : ${score} / ${quizDB.length} 
+                    </h3>
+                `;
+            } else {
+                quiz_box.style.display = "none";
+                s.innerHTML = "0";
+                msg.innerHTML = "Better Luck next Time";
+
+            }
+        }
+    });
+</script>
+
+</html>
