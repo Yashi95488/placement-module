@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acadmics | Student | Enrollment From</title>
+    <link rel="stylesheet" href="./css/en.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<Style>
+    .inputfeild { background-color: #cdd1e4;}
+    .inputfeild:focus { color: #cdd1e4; }
+</Style>
+</head>
+<body>
+  
+    <div class="h-100 w-auto flex-row d-flex justify-content-center  form-base ">  
+        <div class="h-auto w-100 d-flex justify-content-flex-start flex-column  form-base2 ">
+        <!-- Header -->
+            <div class="w-100  d-flex justify-content-center align-items-center header ">
+                <div class="h-100 w-100 d-flex justify-content-center align-items-center  header-base">
+                    <p class="h1 header-text">
+                        Student Enrollment Form
+                    </p>
+                </div>
+            </div>
+        <!-- Body -->
+            <form action="/signin" method="POST" class="p-3">
+                <div class="h-auto w-auto infobox"> 
+                    <div class="h-auto w-auto">
+                        <div class="col-md-12 p-3 box-head">Personal Details</div>
+                    </div>
+                    <div class="h-auto w-auto p-1 ">
+                        <!-- NAMES -->
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="fname">First Name</label>
+                                <input type="text" class="form-control inputfeild" name= "fname" id="fname" placeholder="First Name"  required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="mname">Middle Name</label>
+                                <input type="text" class="form-control inputfeild" name="mname" id="mname" placeholder="Middle Name">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="lname">Last Name</label>
+                                <input type="text" class="form-control inputfeild" id="lname" name="lname" placeholder="Last Name"  required>
+                            </div>
+                        </div>
+                        <!-- address -->
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="fname">Address</label>
+                                <textarea class="form-control  inputfeild" name="address" id="address"  required></textarea>
+                            </div>
+                        </div>
+                        <!-- City / State / Country -->
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="city">City</label>
+                               
+                                <input type="text" class="form-control inputfeild" name="city" id="lname" placeholder="Last Name"  required>
+                          
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="state">State</label>
+                                <select class="form-control  inputfeild" name="state" id="state"  required>
+                                    <option value="null">-- SELECT --</option>
+                                    <option value="">Select state</option>
+    <option value="AN">Andaman and Nicobar Islands</option>
+    <option value="AP">Andhra Pradesh</option>
+    <option value="AR">Arunachal Pradesh</option>
+    <option value="AS">Assam</option>
+    <option value="BR">Bihar</option>
+    <option value="CH">Chandigarh</option>
+    <option value="CT">Chhattisgarh</option>
+    <option value="DN">Dadra and Nagar Haveli</option>
+    <option value="DD">Daman and Diu</option>
+    <option value="DL">Delhi</option>
+    <option value="GA">Goa</option>
+    <option value="GJ">Gujarat</option>
+    <option value="HR">Haryana</option>
+    <option value="HP">Himachal Pradesh</option>
+    <option value="JK">Jammu and Kashmir</option>
+    <option value="JH">Jharkhand</option>
+    <option value="KA">Karnataka</option>
+    <option value="KL">Kerala</option>
+    <option value="LA">Ladakh</option>
+    <option value="LD">Lakshadweep</option>
+    <option value="MP">Madhya Pradesh</option>
+    <option value="MH">Maharashtra</option>
+    <option value="MN">Manipur</option>
+    <option value="ML">Meghalaya</option>
+    <option value="MZ">Mizoram</option>
+    <option value="NL">Nagaland</option>
+    <option value="OR">Odisha</option>
+    <option value="PY">Puducherry</option>
+    <option value="PB">Punjab</option>
+    <option value="RJ">Rajasthan</option>
+    <option value="SK">Sikkim</option>
+    <option value="TN">Tamil Nadu</option>
+    <option value="TG">Telangana</option>
+    <option value="TR">Tripura</option>
+    <option value="UP">Uttar Pradesh</option>
+    <option value="UT">Uttarakhand</option>
+    <option value="WB">West Bengal</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="country">Country</label>
+                                <select class="form-control  inputfeild" name="country" id="country"  required>
+                                    <option value="null">-- SELECT --</option>
+                                    <option value="india">india</option>
+                                </select>
+                            </div>
+                        </div>
+                 
+                        <!-- City / State / Country -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="category">Gender</label>
+                                <select class="form-control  inputfeild" name="gender" id="gender" required>
+                                    <option value="null">-- SELECT --</option>
+                                    <option value="Male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="dob">Date of Birth</label>
+                                <input class="form-control  inputfeild" type="date" name="dob" id="dob"  required>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="zipcode">Zip Code</label>
+                                <input class="form-control  inputfeild" type="text" name="zipcode" id="zipcode"  required>
+                            </div>
+                        </div>
+                        <!-- catogery -->
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="category">Catogery</label>
+                                <select class="form-control  inputfeild" name="category" id="category" required>
+                                    <option value="null">-- SELECT --</option>
+                                    <option value="gen">GENRAL</option>
+                                    <option value="sc">SC</option>
+                                    <option value="st">ST</option>
+                                    <option value="obc">OBC</option>
+                                    <option value="obcgen">OBC-GEN</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Info -->
+                <div class="h-auto w-auto infobox margin-top-5"> 
+                    <div class="h-auto w-auto">
+                        <div class="col-md-12 p-3 box-head">Contact</div>
+                    </div>
+                    <div class="h-auto w-auto p-1">
+                        <!-- personal contact -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="telnum">Personal Number</label>
+                                <input type="tel" class="form-control  inputfeild" name="personalnum" id="telnum" placeholder="(00000-00000)"  required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="telnum">Other Number</label>
+                                <input type="tel" class="form-control  inputfeild" name="othernum" id="telnum2" placeholder="(00000-00000)">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- Parents details -->
+                 <div class="h-auto w-auto infobox"> 
+                    <div class="h-auto w-auto">
+                        <div class="col-md-12 p-3 box-head">Parent Details</div>
+                    </div>
+                    <div class="h-auto w-auto p-1">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="fname">Father's Name</label>
+                                <input type="text" class="form-control  inputfeild" name="fathername" id="fathername" placeholder="Father's Name"  required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="fname">Mother's Name</label>
+                                <input type="text" class="form-control  inputfeild" name="mothername" id="mothername" placeholder="Mother's Name"  required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Father_anuincom">Father's annual income(optional)</label>
+                                <input type="text" class="form-control  inputfeild" name="Father_anuincom" id="Father_anuincom" placeholder="Income">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Mother_anuincom">Mother's Annual Income(optional)</label>
+                                <input type="text" class="form-control  inputfeild" name="Mother_anuincom" id="Mother_anuincom" placeholder="Income">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Father_occupation">Father's Occupation(optional)</label>
+                                <input type="text" class="form-control  inputfeild" name="Father_occupation" id="Father_occupation" placeholder="Occupation">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Mother_occupation">Mother's occupation(optional)</label>
+                                <input type="text" class="form-control  inputfeild" name="Mother_occupation" id="Mother_occupation" placeholder="Ocupation">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="telnum">Parent Number</label>
+                                <input type="tel" class="form-control  inputfeild" name="parent_tel" id="telnum" placeholder="(00000-00000)"  required>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 
+                 
+                <!-- Education Info -->
+                <div class="h-auto w-auto infobox"> 
+                    <div class="h-auto w-auto">
+                        <div class="col-md-12 p-3 box-head">Education</div>
+                    </div>
+                    <div class="h-auto w-auto p-1">
+                        <!-- Education info -->
+                        <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="telnum">10th Aggrigates</label>
+                                    <input type="tel" class="form-control inputfeild" name="tenagri" id="tenagri" placeholder="%"  required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="telnum">12th Aggrigates</label>
+                                    <input type="tel" class="form-control inputfeild" name="tewagri" id="tewagri" placeholder="%"  required>
+                                </div>
+                                
+                                <div class="form-group col-md-6">
+                                    <label for="tenschoolname">10th School Name</label>
+                                    <input type="tel" class="form-control inputfeild" name="tenschoolname" id="tenschoolname" placeholder="10th School Name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="tewschoolname">12th School Name</label>
+                                    <input type="tel" class="form-control inputfeild" name="tewschoolname" id="tewschoolname" placeholder="12th School Name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="telnum">JEE Score (optional)</label>
+                                    <input type="tel" class="form-control inputfeild" name="jeescore" id="jeescore" placeholder="JEE SCORE">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="telnum">JEE Score Advance (optional)</label>
+                                    <input type="tel" class="form-control inputfeild" name="jeescoreAdvance" id="jeescoreAdvance" placeholder="JEE Addvance SCORE">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+<!-- Course -->
+                <div class="h-auto w-auto infobox"> 
+                    <div class="h-auto w-auto">
+                        <div class="col-md-12 p-3 box-head">Course</div>
+                    </div>
+                    <div class="h-auto w-auto p-1">
+                        <!-- Courses info -->
+                        <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="category">Course</label>
+                                    <select class="form-control  inputfeild" name="course" id="category" required>
+                                        <option value="null">-- SELECT --</option>
+                                        <option value="gen">Btech</option>
+                                        <option value="gen">....</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="category">Branch</label>
+                                    <select class="form-control  inputfeild" name="branch" id="category" required>
+                                        <option value="null">-- SELECT --</option>
+                                        <option value="gen">Btech</option>
+                                        <option value="gen">....</option>
+                                    </select>
+                                </div>
+                               
+                        </div>
+                    </div>
+                </div>
+                <!-- Authentication -->
+                <div class="h-auto w-auto infobox"> 
+                    <div class="h-auto w-auto">
+                        <div class="col-md-12 p-3 box-head">Authentications</div>
+                    </div>
+                    <div class="h-auto w-auto p-1">
+                        <!-- Auth info -->
+                        <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="telnum">Id</label>
+                                    <input type="number" class="form-control inputfeild" name="id" id="email" placeholder="Use Enrollment number"  required>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="telnum">Email</label>
+                                    <input type="email" class="form-control inputfeild" name="email" id="email" placeholder="User Personal Email"  required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="telnum">Password</label>
+                                    <input type="tel" class="form-control inputfeild" name="pass" id="cpass" placeholder="Confirm Password"  required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="telnum">Confirm Password</label>
+                                    <input type="tel" class="form-control inputfeild" name="cpass" id="cpass" placeholder="Confirm Password"  required>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-control custom-checkbox d-flex justify-content-center">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Accept the Privacy Policy</label>
+                </div>
+                <div class="form-row">
+                  <div class="h-auto w-auto col-md-6 p-2">
+                      <input type="button" class="btn btn-primary " name="enroll_me" type="submit" value="back" onclick="window.location.replace('./studentSection.php')">
+                    </div>
+                    <div class="h-auto w-auto col-md-6 p-2">
+                        <input type="submit" class="btn btn-primary " name="enroll_me" type="submit" value="Apply">
+                    </div>
+                </div>
+                    
+            </form> 
+     
+        </div>
+    </div>
+</body>
+</html>

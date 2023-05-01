@@ -8,14 +8,53 @@ const sessions=require("express-session");
 var compiler = require('compilex');
 var options = {stats : true}; //prints stats on console 
 compiler.init(options);
-mongoose.connect("mongodb://localhost:27017/usersdb");
+mongoose.connect("mongodb://localhost:27017/erpdb");
 const studentschema={
-name: String,
+fname: String,
+mname: String,
+lname: String,
+address: String,
+city: String,
+state: String,
+country: String,
+gender: String,
+dob: String,
+zipcode: String,
+category: String,
+personalnum: String,
+othernum: String,
+fathername: String,
+mothername: String,
+father_anuincom: String,
+mother_anuincom: String,
+father_occupation: String,
+mother_occupation: String,
+parent_tel: String,
+tenagri: String,
+tewagri: String,
+tenschoolname: String,
+tewschoolname: String,
+jeescore: String,
+jeescoreAdvance: String,
+course: String,
+branch: String,
 email: String,
-numb: String,
 id: Number,
-password: String
+pass: String
 }
+const codingSchema={
+    cid: Number,
+    question: String,
+    st: String
+}
+const criteriaSchema={
+    name: String,
+    per10: Number,
+    per12: Number,
+    pergra: Number
+};
+const criteria=mongoose.model("criteria",criteriaSchema);
+const coding=mongoose.model("coding",codingSchema);
 const student=mongoose.model("student",studentschema);
 app.use(express.static("public"));
 app.set("view engine","ejs");
@@ -42,50 +81,62 @@ app.get("/",function(req,res){
     else
     res.render("login.ejs");
 })
-const quiz=[{
-    question: "Q1: What is the full form of HTML",
-    a: "Hello To My Land",
-    b: "Hyper Text Markup Language",
-    c: "HyperText Makeup Language",
-    d: "Hypertext Markup Language",
-    ans: "ans4"
-}, {
-    question: "Q2: What is the full form of CSS",
-    a: "Cascading Style Sheets",
-    b: "Castel Store Sheet",
-    c: "Cartoon Style Sheets",
-    d: "Cascading Super Sheets",
-    ans: "ans1"
-}, {
-    question: "Q3: What is the full form of HTTP",
-    a: "Hello To Product",
-    b: "Hyper Text Protocol",
-    c: "HyperText Transfer Protocol",
-    d: "Hyper Transfer Protocol",
-    ans: "ans3"
-}, {
-    question: "Q4: What is the full form of JS",
-    a: "Just Scripting",
-    b: "Java String",
-    c: "Java Script",
-    d: "Java Sending",
-    ans: "ans3"
-}, {
-    question: "Q5: What is the full form of HTML",
-    a: "Hello To My Land",
-    b: "Hyper Text Markup Language",
-    c: "HyperText Makeup Language",
-    d: "Hyper Markup Language",
-    ans: "ans3"
-}];
+app.get("/enrollmentform",function(req,res){
+    res.render("enrollmentform");
+})
+app.get("/training",function(req,res){
+    res.render("training",{name: session.name});
+})
+
 app.get("/quiz",function(req,res){
     res.render("main",{quiz: quiz});
+})
+app.get("/companytestinfo",function(req,res){
+    res.render("companytestinfo");
+})
+app.post("/savecoding",function(req,res){
+    const questio=req.body.question;
+    const st=req.body.st1;
+    const q1=new coding({
+        cid: 1,
+        question: questio,
+        st: st
+
+    });
+    q1.save();
+    res.send("saved successfully");
+})
+app.get("/coding",function(req,res){
+    coding.findOne({cid: 1},function(err,ques){
+        res.render("compnaycoding.ejs",{q: ques});
+    })
+})
+app.get("/companyinfo",function(req,res){
+    res.render("companyinputcriteria");
+})
+app.post("/savecompanyinfo",function(req,res){
+    const name=req.body.name;
+    const per10=req.body.per10;
+    const per12=req.body.per12;
+    const pergra=req.body.pergra;
+    const info=new criteria({
+        name: name,
+        per10: per10,
+        per12: per12,
+        pergra: pergra
+    });
+    info.save();
+    res.send("saved succesfully");
+    console.log(info);
+})
+app.get("/check",function(req,res){
+    res.render("check.ejs");
 })
 app.post("/login",function(req,res){
     userid=req.body.userid;
     psw=req.body.password;
     student.findOne({id: userid},function(err,stud){
-        if(stud.password===psw){
+        if(stud.pass===psw){
             session=req.session;
             session.userid=userid;
             session.name=stud.name;
@@ -93,8 +144,14 @@ app.post("/login",function(req,res){
             res.render("dashboard.ejs",{student: stud});
         }
         else{
+            
             res.redirect("/login");
         }
+    })
+})
+app.get("/profile",function(req,res){
+    student.findOne({id: session.userid},function(err,stud){
+        res.render("profile",{student: stud});
     })
 })
 app.post("/verify_id",function(req,res){
@@ -158,6 +215,26 @@ app.post("/compiler",function(req,res){
         }
     }
 })
+app.get("/recomendation",function(req,res){
+    session=req.session;
+    if(session.userid){
+        userid=session.userid;
+        student.findOne({id: userid}).then((stud)=>{
+            console.log(stud.name)
+            console.log(stud.tenagri)
+            criteria.find({$and: [{per10: { $lte: stud.tenagri}},{per12: {$lte: stud.tewagri}}]},(comp,err)=>{
+                console.log(comp);
+                console.log(err);
+                res.render("recomendation.ejs",{student: err});
+            })
+        
+        });
+    }
+    
+})
+app.get("/newpost",function(req,res){
+    res.render("newpost.ejs");
+})
 app.post("/changepsw",function(req,res){
     console.log("hello");
     const userid=req.body.userid;
@@ -168,21 +245,49 @@ app.post("/changepsw",function(req,res){
     });
     res.redirect("/login");
 })
+app.get("/companyDashboard",function(req,res){
+    res.render("companydashboard.ejs");
+})
+app.get("/studentSection",function(req,res){
+    res.render("StudentSection");
+})
 app.post("/signin",function(req,res){
-    const name=req.body.name;
-    const email=req.body.email;
-    const id=req.body.id;
-    const phn=req.body.number;
-    const psw=req.body.password;
+    
     const stud=new student({
-        name: name,
-        email: email,
-        numb: phn,
-        id: id,
-        password: psw
+        fname: req.body.fname,
+mname: req.body.mname,
+lname: req.body.lname,
+address: req.body.address,
+city: req.body.city,
+state: req.body.state,
+country: req.body.country,
+gender: req.body.gender,
+dob: req.body.dob,
+zipcode: req.body.zipcode,
+category: req.body.category,
+personalnum: req.body.personalnum,
+othernum: req.body.othernum,
+fathername: req.body.fathername,
+mothername: req.body.mothername,
+father_anuincom: req.body.father_anuincom,
+mother_anuincom: req.body.mother_anuincom,
+father_occupation: req.body.father_occupation,
+mother_occupation: req.body.mother_occupation,
+parent_tel: req.body.parent_tel,
+tenagri: req.body.tenagri,
+tewagri: req.body.tewagri,
+tenschoolname: req.body.tenschoolname,
+tewschoolname: req.body.tewschoolname,
+jeescore: req.body.jeescore,
+jeescoreAdvance: req.body.jeescoreAdvance,
+course: req.body.course,
+branch: req.body.branch,
+email: req.body.email,
+id: req.body.id,
+pass: req.body.pass
     })
     stud.save();
-    res.redirect("/login");
+    res.redirect("/admin.ejs");
     
 })
 
