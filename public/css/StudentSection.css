@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&display=swap');
+
+/* Default Theme Light*/
+
+ :root {
+    --clr-bg: #eaeaea;
+    --clr-1: red;
+    --clr-2: #0000dc;
+    --clr-3: #ffffff;
+    --clr-4: rgba(52, 52, 52, 0.134);
+    --clr-5: #000000;
+}
+
+.s1_1 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: aqua; */
+}
+
+.s1_1 .s1_2 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: aquamarine; */
+}
+
+.s1_1 .s1_2 .filters {
+    height: auto;
+    width: auto;
+    padding: 10px;
+}
+
+.s1_1 .s1_2 .filters .inputbase {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin-top: 10px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.s1_1 .s1_2 .filters .inputbase input {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: var(--clr-4);
+    color: var(--clr-5);
+}
+.s1_1 .s1_2 .filters .inputbase input[type="button"] {
+  background-image: linear-gradient(45deg, var(--lg-1), var(--lg-2));
+  color: white;
+}
+
+.s1_1 .s1_2 .table_base {
+    max-height: 300px;
+    width: auto;
+    padding: 10px;
+    overflow: auto;
+    /* background-color: #0000dc; */
+}
+
+.s1_1 .s1_2 .table_base table {
+    height: auto;
+    width: 100%;
+    border-collapse: collapse;
+    /* border: px solid #0000dc; */
+}
+
+.s1_1 .s1_2 .table_base table tbody td,
+.s1_1 .s1_2 .table_base table thead th {
+    border: 2px solid #0000dc;
+    width: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.s1_1 .s1_2 .table_base table thead th {
+    background-color: var(--clr-4);
+}
+
+.s1_1 .s1_2 .table_base table thead th,
+.s1_1 .s1_2 .table_base table tbody td .data {
+    color: var(--clr-5);
+}
+
+.s1_1 .s1_2 .table_base table tbody td:last-child .data {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.s1_1 .s1_2 .table_base table tbody td:last-child .data a {
+    text-decoration: none;
+}
+
+.s1_1 .s1_2 .table_base table tbody td:last-child .data a input {
+    height: auto;
+    width: auto;
+    padding: 5px 10px 5px 10px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+
+/* #place1,
+#title2,
+#title3,
+#sec2,
+#sec3 {
+    display: none;
+} */
+
+.box-content button {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    font-size: 15px;
+    background-color: var(--clr-5);
+    color: var(--clr-3);
+    gap: 5px;
+}
+
+.box-content .box-button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+/* ====================================================================================== */
+
+
+/* ====================================================================================== */
+
+
+/* ====================================================================================== */
+
+@media (max-width:1300px) {}
+
+@media (max-width:1000px) {}
+
+@media (max-width:900px) {
+    .s1_1 .s1_2 .filters .inputbase {
+        flex-direction: column;
+    }
+    .s1_1 .s1_2 .filters .inputbase input {
+        width: 80%;
+    }
+    .box-content .box-button {
+        flex-direction: column;
+    }
+    .s1_1 .s1_2 .table_base table tbody td:last-child .data {
+        flex-direction: column;
+    }
+}
+
+
+/* ====================================================================================== */
+
+@media (max-width:800px) {}
+
+
+/* ====================================================================================== */
+
+@media (max-width:700px) {}
+
+@media (max-width:750px) {}
+
+@media (max-width:630px) {}
+
+
+/* ======================================================================================*/
+
+@media (max-width:500px) {
+    .sidebar {
+        z-index: 200;
+        width: 90%;
+    }
+    .homePage {
+        z-index: 90;
+    }
+    .homePage .homePage-base .head .head-1 .head-text .pannel-heading {
+        display: none;
+    }
+    .homePage .homePage-base .head .head-1 .Profile {
+        background: none;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-1 .pro-img {
+        height: 40px;
+        width: 40px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-name {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-1 .pro-name i {
+        font-size: 30px;
+    }
+}
+img{
+    width: 200px;
+    border: 2px solid white;
+    margin-top: 100px;
+    margin-left: 45%;
+    padding: 5px;
+    
+}
+link:hover{
+    background-color: cadetblue;
+}
+img:hover
+{
+    background-color: aquamarine;
+}
+table{
+    border: 1px solid black;
+    margin-top: 50px;
+}
+tr,td{
+    border: 1px solid black;
+    padding-left: 130px;
+    padding-right: 120px;
+    text-transform: uppercase;
+    background-color: rgb(128,223,255);
+}
+.heading{
+    background-color: black;
+    text-decoration-color: aliceblue;
+    color: antiquewhite;
+}
+body{
+    background-color: rgb(204,255,255);
+}
+.apply{
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    
+    border: 2px solid black;
+    text-transform: uppercase;
+    text-decoration-color: white;
+}
+a:hover{
+color: aqua;
+}
+.box{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    }
+input{
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.submit-button{
+        margin-left: 300px;
+    margin-top: 20px;
+    margin-right: 300px;
+    text-transform: uppercase;
+    background-color: aqua;
+    text-decoration-color: black;
+}
+button{
+  background-color: aqua;
+    text-decoration-color: black;  
+    text-transform: uppercase;
+}
+button:hover{
+background-color: darkgray;
+}

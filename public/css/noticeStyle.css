@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&display=swap');
+
+/* Default Theme Light*/
+
+ :root {
+    --clr-bg: #eaeaea;
+    --clr-1: red;
+    --clr-2: #0000dc;
+    --clr-3: #ffffff;
+    --clr-4: rgba(52, 52, 52, 0.134);
+    --clr-5: #000000;
+}
+
+.s1_1 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: aqua; */
+}
+
+.s1_1 .s1_2 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: aquamarine; */
+}
+
+.s1_1 .s1_2 .filters {
+    height: auto;
+    width: auto;
+    padding: 10px;
+}
+
+.s1_1 .s1_2 .filters .inputbase {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin-top: 10px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.s1_1 .s1_2 .filters .inputbase input {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: var(--clr-4);
+    color: var(--clr-5);
+}
+
+.s1_1 .s1_2 .table_base {
+    max-height: 350px;
+    width: auto;
+    padding: 10px;
+    /* background-color: #79dc00; */
+    overflow-y: scroll;
+}
+
+.s1_1 .s1_2 .table_base table {
+    height: auto;
+    width: 100%;
+    border-collapse: collapse;
+    /* border: px solid #0000dc; */
+}
+
+.s1_1 .s1_2 .table_base table tbody td,
+.s1_1 .s1_2 .table_base table thead th {
+    /* border: 2px solid #0000dc; */
+    border: 2px solid #0000dc;
+    width: auto;
+    height: auto;
+    padding: 10px;
+}
+
+.s1_1 .s1_2 .table_base table thead th {
+    background-color: var(--clr-4);
+}
+
+.s1_1 .s1_2 .table_base table tbody td .data {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: #0000dc; */
+    text-align: center;
+    overflow: hidden;
+}
+
+.s1_1 .s1_2 .table_base table thead th,
+.s1_1 .s1_2 .table_base table tbody td .data {
+    color: var(--clr-5);
+}
+
+.s1_1 .s1_2 .table_base table tbody td:last-child .data {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    width: auto;
+}
+
+.s1_1 .s1_2 .table_base table tbody td:nth-child(5) .data a {
+    text-decoration: none;
+    color: var(--clr-2);
+}
+
+.s1_1 .s1_2 .table_base table tbody td:nth-child(5) .data a:hover {
+    text-decoration: underline;
+}
+
+.s1_1 .s1_2 .table_base table tbody td:last-child .data a {
+    text-decoration: none;
+}
+
+.s1_1 .s1_2 .table_base table tbody td:last-child .data a input {
+    height: auto;
+    width: auto;
+    padding: 5px 10px 5px 10px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+
+#place1,
+#title2,
+#title3,
+#sec2,
+#sec3 {
+    display: none;
+}
+
+.box-content button {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    font-size: 15px;
+    background-color: var(--clr-5);
+    color: var(--clr-3);
+    gap: 5px;
+}
+
+.box-content .box-button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.s1_1 .s1_2 .table_base .newNoticeBase {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: #0000dc; */
+}
+
+.s1_1 .s1_2 .table_base .newNoticeBase form {
+    height: auto;
+    width: auto;
+    border: 1px solid gray;
+}
+
+.s1_1 .s1_2 .table_base .newNoticeBase form .form-header {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-4);
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--clr-2);
+    border-bottom: 1px solid gray;
+}
+
+.s1_1 .s1_2 .table_base .newNoticeBase form .form-header .form-title {
+    color: var(--clr-2);
+}
+
+.s1_1 .s1_2 .table_base .newNoticeBase form .form-body {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.s1_1 .s1_2 .table_base .newNoticeBase form .form-body input,
+.s1_1 .s1_2 .table_base .newNoticeBase form .form-body textarea {
+    height: auto;
+    /* width: auto; */
+    padding: 10px;
+    background-color: var(--clr-4);
+    width: 80%;
+    color: var(--clr-5);
+    background-color: var(--clr-4);
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.s1_1 .s1_2 .table_base .newNoticeBase form .form-body textarea {
+    height: 100px;
+}
+
+.s1_1 .s1_2 .table_base .newNoticeBase form .form-footer {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.s1_1 .s1_2 .table_base .newNoticeBase form .form-footer input {
+    height: auto;
+    width: 80%;
+    background-color: var(--clr-2);
+    color: var(--clr-3);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    outline: none;
+    font-weight: 700;
+    opacity: 0.5;
+}
+
+.s1_1 .s1_2 .table_base .newNoticeBase form .form-footer input:hover {
+    opacity: 1;
+}
+
+
+/* ====================================================================================== */
+
+
+/* ====================================================================================== */
+
+
+/* ====================================================================================== */
+
+@media (max-width:1300px) {}
+
+@media (max-width:1000px) {}
+
+@media (max-width:900px) {
+    .s1_1 .s1_2 .filters .inputbase {
+        flex-direction: column;
+    }
+    .s1_1 .s1_2 .filters .inputbase input {
+        width: 80%;
+    }
+    .box-content .box-button {
+        flex-direction: column;
+    }
+    .s1_1 .s1_2 .table_base table tbody td:last-child .data {
+        flex-direction: column;
+    }
+}
+
+
+/* ====================================================================================== */
+
+@media (max-width:800px) {}
+
+
+/* ====================================================================================== */
+
+@media (max-width:700px) {}
+
+@media (max-width:750px) {}
+
+@media (max-width:630px) {}
+
+
+/* ======================================================================================*/
+
+@media (max-width:500px) {
+    .sidebar {
+        z-index: 200;
+        width: 90%;
+    }
+    .homePage {
+        z-index: 90;
+    }
+    .homePage .homePage-base .head .head-1 .head-text .pannel-heading {
+        display: none;
+    }
+    .homePage .homePage-base .head .head-1 .Profile {
+        background: none;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-1 .pro-img {
+        height: 40px;
+        width: 40px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-name {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-1 .pro-name i {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,47 @@
+body{
+    color: black;
+}
+.base{
+    display: block;
+    height:100vh;
+    width:100%;
+    background-color: white;
+    overflow-y: auto;
+}
+.bodydiv{
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;;
+}
+.editorbody{
+    height: 100%;
+    background-color: #F5F5F5;
+    overflow: auto;
+    color: black;
+}
+.editor{
+    height: 100%;
+}
+.sErrorMessage{
+        display: none;
+}
+.sampletestcase{
+    background-color:#D0E8F2;
+}
+textarea{
+    background-color:#F5F5F5;
+    color: gray;
+    border:none;
+    outline: none;
+}
+@media screen and (max-width:800px)
+{
+    .sErrorMessage{
+        display: block;
+    }
+    .base{
+        display: none;
+    }
+}

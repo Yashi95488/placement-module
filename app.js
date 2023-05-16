@@ -53,6 +53,73 @@ const criteriaSchema={
     per12: Number,
     pergra: Number
 };
+const postSchema={
+    role: String,
+    sdate: String,
+    edate: String,
+    content: String,
+    per10: String,
+    per12: String,
+    grad: String
+}
+const timetableSchema={
+	sem: String,
+	m1:String,
+	m2:String,
+	m3:String,
+	m4:String,
+	m5:String,
+	m6:String,
+	m7:String,
+	m8:String,
+	t1:String,
+	t2:String,
+	t3:String,
+	t4:String,
+	t5:String,
+	t6:String,
+	t7:String,
+	t8:String,
+	w1:String,
+	w2:String,
+	w3:String,
+	w4:String,
+	w5:String,
+	w6:String,
+	w7:String,
+	w8:String,
+	th1:String,
+	th2:String,
+	th3:String,
+	th4:String,
+	th5:String,
+	th6:String,
+	th7:String,
+	th8:String,
+	f1:String,
+	f2:String,
+	f3:String,
+	f4:String,
+	f5:String,
+	f6:String,
+	f7:String,
+	f8:String
+}
+const applySchema={
+    id: Number,
+    status: String,
+    name: String
+};
+const noticeSchema={
+    noticetitle: String,
+    noticelink: String,
+    NoticeContent: String,
+    Date1: String
+    };
+    const notice=mongoose.model("notice",noticeSchema);
+const apply=mongoose.model("appl",applySchema);
+const table=mongoose.model("table",timetableSchema);
+const post=mongoose.model("post",postSchema);
 const criteria=mongoose.model("criteria",criteriaSchema);
 const coding=mongoose.model("coding",codingSchema);
 const student=mongoose.model("student",studentschema);
@@ -61,6 +128,7 @@ app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
 const oneday=1000*60*60*24;
 app.use(sessions({
     secret: "thisismysecretkeyabcdefghitred",
@@ -80,6 +148,62 @@ app.get("/",function(req,res){
     }
     else
     res.render("login.ejs");
+})
+app.get("/cnotice",function(req,res){
+    res.render("cnotice.ejs");
+})
+app.post("/cnotice",function(req,res){
+    const d=new Date();
+    const a=new notice({
+        noticetitle: req.body.noticetitle,
+noticelink: req.body.noticelink,
+NoticeContent: req.body.NoticeContent,
+Date1: d
+    });
+    a.save();
+    res.redirect("/admin");
+})
+app.get("/notice",function(req,res){
+    notice.find({ },function(err,ques){
+        res.render("notice.ejs",{table: ques});
+    })
+})
+app.post("/capply",function(req,res){
+    const abc=req.body.check;
+    const a="In Review";
+    const b=new apply({
+        id: session.userid,
+        name: abc,
+        status: a
+    });
+    b.save();
+    res.redirect("/");
+})
+app.get("/companyapplied",function(req,res){
+    apply.find({id: session.userid},function(err,ques){
+        res.render("companyApplied.ejs",{q: ques});
+    })
+})
+app.post("/newpost",function(req,res){
+    const newpost= new post({
+        role: req.body.role,
+        sdate: req.body.sdate,
+        edate: req.body.edate,
+        content: req.body.content,
+        per10: req.body.criteria1,
+        per12: req.body.criteria2,
+        grad: req.body.criteria3
+    })
+    newpost.save();
+    console.log(newpost)
+    res.redirect("/companyDashboard");
+})
+app.get("/hireme",function(req,res){
+    post.find({},function(err,ques){
+        console.log(err);
+        res.render("hireme.ejs",{q: ques});
+    })
+   //res.render("hireme.ejs");
 })
 app.get("/enrollmentform",function(req,res){
     res.render("enrollmentform");
@@ -126,7 +250,7 @@ app.post("/savecompanyinfo",function(req,res){
         pergra: pergra
     });
     info.save();
-    res.send("saved succesfully");
+    res.redirect("/companyinfo");
     console.log(info);
 })
 app.get("/check",function(req,res){
@@ -227,10 +351,65 @@ app.get("/recomendation",function(req,res){
                 console.log(err);
                 res.render("recomendation.ejs",{student: err});
             })
-        
         });
     }
     
+})
+app.get("/createtable",function(req,res){
+    res.render("createtable.ejs");
+})
+app.post("/table",function(req,res){
+    const t1=new table({
+        sem: req.body.sem,
+	m1:req.body.m1,
+	m2:req.body.m2,
+	m3:req.body.m3,
+	m4:req.body.m4,
+	m5:req.body.m5,
+	m6:req.body.m6,
+	m7:req.body.m7,
+	m8:req.body.m8,
+	t1:req.body.t1,
+	t2:req.body.t2,
+	t3:req.body.t3,
+	t4:req.body.t4,
+	t5:req.body.t5,
+	t6:req.body.t6,
+	t7:req.body.t7,
+	t8:req.body.t8,
+	w1:req.body.w1,
+	w2:req.body.w2,
+	w3:req.body.w3,
+	w4:req.body.w4,
+	w5:req.body.w5,
+	w6:req.body.w6,
+	w7:req.body.w7,
+	w8:req.body.w8,
+	th1:req.body.th1,
+	th2:req.body.th2,
+	th3:req.body.th3,
+	th4:req.body.th4,
+	th5:req.body.th5,
+	th6:req.body.th6,
+	th7:req.body.th7,
+	th8:req.body.th8,
+	f1:req.body.f1,
+	f2:req.body.f2,
+	f3:req.body.f3,
+	f4:req.body.f4,
+	f5:req.body.f5,
+	f6:req.body.f6,
+	f7:req.body.f7,
+	f8:req.body.f8
+    });
+    t1.save();
+    res.send("successfull");
+})
+app.get("/showtable",function(req,res){
+    table.find({},function(err,ques){
+        console.log(ques);
+        res.render("showtable.ejs",{table1: ques});
+    })
 })
 app.get("/newpost",function(req,res){
     res.render("newpost.ejs");

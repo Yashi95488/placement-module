@@ -6,19 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SYTLE SHEET LINK -->
-    <link rel="stylesheet" href="css/styleStudent.css">
-    <link rel="stylesheet" href="css/companyapplied.css">
+    <link rel="stylesheet" href="./css/styleStudent.css">
+    <link rel="stylesheet" href="./css/studentNotice.css">
     <!-- CDN Library link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- charts CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- JQuery File for NavBar -->
     <script src="./JS/JQFile.js"></script>
     <!-- ICON LIBRARY -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <title>Student | Placement | Company Applied</title>
+    <!-- angular Js Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Student | Notice</title>
 </head>
 <body onkeydown="if(!event.target.matches('input')&&!event.target.matches('textarea'))return!1" oncontextmenu="return!1" onselectstart="return!1" ondragstart="return!1">
  <!-- Side Nav Bar -->
@@ -126,8 +127,10 @@
                         <div class="subdata item1" onclick="window.location.replace('sem_registration.php');">
                             Semester Registration
                         </div>
-                        
-                        <div class="subdata item1" onclick="window.location.replace('create_resume_form.php');"> Create Your Resume </div>
+                       
+                        <div class="subdata item1" onclick="window.location.replace('create_resume_form.php');">
+                            Create Your Resume
+                        </div>
                     </div>
                 </div>
                 <!-- PLACEMENT -->
@@ -199,14 +202,14 @@
             </div>
         </div>
     </div>
-    <!-- Dashboard Content Box -->
+  <!-- Dashboard Content Box -->
     <section class="homePage">
         <div class="homePage-base">
             <!-- home Page Header -->
             <div class="head">
                 <div class="head-1">
                     <div class="head-text">
-                        <div class="pannel-heading"> Placement | Company Applied </div>
+                        <div class="pannel-heading"> Notice </div>
                     </div>
                     <div class="Profile">
                         <div class="pro-1">
@@ -224,30 +227,19 @@
             <!-- bread crums -->
             <div class="ss-head">
                 <div class="ss-inner-base">
-                    <h3>Placement | Company Applied</h3>
+                    <h3>Notice</h3>
                 </div>
             </div>
-            <div class='main'> 
-                <!-- home Page Box-2 -->
-                <div class="box-2">
-                    <div class="box-2_1">
-                        <div class="box-content">
-                            <p id="title2">
-                                Company's You Applied  
-                            </p>
-                        </div>   
-                    </div>
-                    <hr>
-                </div>
+             <div class='main'> 
+               
                 <div class="s1_1" id="sec2">
                     <div class="s1_2">
                         <div class="filters">
-                            <div class="inputbase"> 
-                                <input type="search" name="cname" placeholder="Company Name"> 
-                                <input type="search" name="post" placeholder="Post"> 
+                            <div class="inputbase">
+                                <input type="text" name="noticetitle" id="noticetitle" placeholder="Title Name"> 
+                                <input type="month" name="month" id="month">
                                 <input type="button" name="sreach" id="sreach" value="Sreach">
                             </div>
-                            <hr>
                         </div>
                         <div class="table_base">
                             <form action="" method="">
@@ -255,42 +247,33 @@
                                     <thead>
                                         <tr>
                                             <th> S.No. </th>
-                                            <th> Company Name </th>
-                                            <th> Post </th>
-                                            <th> Post Status </th>
-                                            <th> Selection Status </th>
-                                            <th> Action </th>
+                                            <th> Title </th>
+                                            <th> Notice </th>
+                                            <th> Publish Date </th>
+                                            <th>Link</th>
+                                  
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <% for(var i=0;i<table.length;i++) { %> 
                                         <tr>
-                                            <td> <div class="data"> 1 </div> </td>
-                                            <td> <div class="data"> Infosys </div> </td>
-                                            <td> <div class="data"> Software Engieneer </div> </td>
-                                            <td> 
-                                                <div class="data"> 
-                                                        <span>OPEN/CLOSE</span>
-                                                </div> 
-                                            </td>
-                                            <td> <div class="data"> Selected /Placed /Rejected </div> </td>
-                                            <td>
-                                                <div class="data">    
-                                                    <a href="#">
-                                                        <input type="button" value="View">
-                                                    </a>
-                                                </div>
-                                            </td>
+                                            <td> <div class="data"><%= i+1 %></div> </td>
+                                            <td> <div class="data"> <%=table[i].noticetitle %> </div> </td>
+                                            <td style="overflow:hidden;max-width:150px;"> <div class="data"><%=table[i].NoticeContent %></div> </td>
+                                            <td> <div class="data"><%= table[i].date %></div> </td>
+                                            <td> <div class="data"> <a href="#"><%= table[i].noticelink %></a> </div> </td>
+                                            
                                         </tr>
+                                        <% } %>
                                     </tbody>
                                 </table>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
     <!-- JavaScript file for Theme Changing -->
-<script src="./JS/javascript.js"></script>
+    <script src="./JS/javascript.js"></script>
 </body>
 </html>

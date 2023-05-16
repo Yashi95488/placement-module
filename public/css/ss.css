@@ -1,0 +1,424 @@
+/* box-2 */
+
+.homePage .homePage-base .box-2 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin-top: 20px;
+    /* background-color: #0000dc; */
+}
+
+.homePage .homePage-base .box-2 .box-2_1 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: #c21010; */
+}
+
+.homePage .homePage-base .box-2 .box-2_1_1 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    background: rgb(68, 34, 195);
+    background: linear-gradient(307deg, var(--lg-1) 0%, var(--lg-2) 100%);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.homePage .homePage-base .box-2 .box-cont {
+    height: auto;
+    width: auto;
+    background-image: url('work-from-home.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    padding: 20px;
+}
+
+.homePage .homePage-base .box-2 .box-2_1_1 h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+.homePage .homePage-base .box-2 .box-2_1_1 button {
+    margin-top: 15px;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-weight: bolder;
+}
+
+.homePage .homePage-base .box-3 {
+    margin-top: 10px;
+    padding: 10px;
+    /* background-color: #00ff91; */
+    height: auto;
+    width: auto;
+}
+
+.homePage .homePage-base .box-3 .box-3-innerbase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 330px);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    list-style: none;
+    padding: 10px;
+    height: auto;
+    width: auto;
+}
+
+.homePage .homePage-base .box-3 .box-3-innerbase>.box-3-stats-base {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--clr-3);
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.homePage .homePage-base .box-3 .box-3-innerbase .box-3-stats-base .box-3-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    font-weight: lighter;
+}
+
+.homePage .homePage-base .box-3 .box-3-innerbase .box-3-stats-base .box-3-content span:nth-child(1) {
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgb(164, 164, 164);
+}
+
+.homePage .homePage-base .box-3 .box-3-innerbase .box-3-stats-base .box-3-content span:nth-child(2) {
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--clr-5);
+}
+
+.homePage .homePage-base .box-3 .box-3-innerbase .box-3-stats-base .box-3-avtar {
+    color: var(--clr-5);
+    font-size: 50px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar~.homePage .homePage-base .box-3 .box-3-innerbase {
+    grid-template-columns: repeat(auto-fit, 45%);
+}
+
+.sidebar.close~.homePage .homePage-base .box-3 .box-3-innerbase {
+    grid-template-columns: repeat(auto-fit, 23%);
+}
+
+
+/* box 3 */
+
+.homePage .homePage-base .v1_2 {
+    width: auto;
+    height: auto;
+    /* background: rgba(119, 1, 1, 1); */
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.homePage .homePage-base .v1_2 .v1_3 {
+    width: auto;
+    height: auto;
+    /* background: rgba(0, 25, 253, 1); */
+    padding: 10px;
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 {
+    width: auto;
+    height: auto;
+    background: var(--clr-3);
+    /* background: rgba(255, 0, 0, 1); */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 {
+    width: auto;
+    height: auto;
+    padding: 5px;
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 .v2_6 {
+    width: auto;
+    height: auto;
+    /* background: rgb(75, 219, 8); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 button {
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    background: linear-gradient(45deg, var(--lg-1), var(--lg-2));
+    color: var(--clr-3);
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 .v2_6 span {
+    font-size: 25px;
+    padding: 10px;
+    color: var(--clr-5);
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 .v2_6 .v2_9 i {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--clr-5);
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 .display-notice {
+    height: 200px;
+    width: auto;
+    padding: 10px;
+    background-color: var(--clr-bg);
+    margin-top: 10px;
+    overflow-y: scroll;
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 .display-notice .display-rows {
+    margin-top: 10px;
+    height: auto;
+    width: auto;
+    background-color: var(--clr-3);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 .display-notice .display-rows a {
+    color: var(--clr-2);
+    text-decoration: none;
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 .display-notice .display-rows p,
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 .display-notice .display-rows h3 {
+    color: var(--clr-5);
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 span a {
+    color: var(--clr-2);
+    text-decoration: none;
+}
+
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 span a:hover,
+.homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 .display-notice .display-rows a:hover {
+    text-decoration: underline;
+}
+
+.homePage .homePage-base .ss-head {
+    height: auto;
+    width: auto;
+    padding: 20px;
+}
+
+
+/* box-2 */
+
+.homePage .homePage-base .box-2 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin-top: 20px;
+    /* background-color: #0000dc; */
+}
+
+.homePage .homePage-base .box-2 .box-2_1 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: #c21010; */
+}
+
+.homePage .homePage-base .box-2 .box-2_1 .box-content {
+    height: auto;
+    width: auto;
+    background-image: url('work-from-home.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    padding: 20px;
+}
+
+
+/* ====================================================================================== */
+
+
+/* ====================================================================================== */
+
+
+/* ====================================================================================== */
+
+@media (max-width:1300px) {
+    .sidebar~.homePage .homePage-base .box-3 .box-3-innerbase {
+        grid-template-columns: repeat(auto-fit, 40%);
+    }
+    .sidebar.close~.homePage .homePage-base .box-3 .box-3-innerbase {
+        grid-template-columns: repeat(auto-fit, 48%);
+    }
+}
+
+@media (max-width:1000px) {
+    .sidebar~.homePage .homePage-base .box-3 .box-3-innerbase {
+        grid-template-columns: repeat(auto-fit, 45%);
+    }
+    .sidebar.close~.homePage .homePage-base .box-3 .box-3-innerbase {
+        grid-template-columns: repeat(auto-fit, 48%);
+    }
+    .homePage .homePage-base .box-3 .box-3-innerbase>.box-3-stats-base {
+        flex-direction: column-reverse;
+        padding: 10px;
+    }
+}
+
+@media (max-width:900px) {
+    .homePage .homePage-base .box-2 {
+        padding: 10px;
+    }
+    .homePage .homePage-base .box-2 .box-2_1 {
+        height: auto;
+        width: auto;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .homePage .homePage-base .box-2 .box-2_1_2 {
+        height: 250px;
+        margin-top: 10px;
+    }
+    .homePage .homePage-base .box-2 .box-cont {
+        background-size: contain;
+    }
+    .homePage .homePage-base .head .head-1 .Profile {
+        background: none;
+    }
+    .homePage .homePage-base .box-3 .box-3-innerbase {
+        grid-template-columns: repeat(auto-fit, 300px);
+    }
+}
+
+
+/* ====================================================================================== */
+
+@media (max-width:800px) {
+    .sidebar~.homePage .homePage-base .box-3 .box-3-innerbase {
+        grid-template-columns: repeat(auto-fit, 100%);
+    }
+    .sidebar.close~.homePage .homePage-base .box-3 .box-3-innerbase {
+        grid-template-columns: repeat(auto-fit, 48%);
+    }
+    .homePage .homePage-base .box-3 .box-3-innerbase>.box-3-stats-base {
+        flex-direction: column-reverse;
+        padding: 10px;
+    }
+}
+
+
+/* ====================================================================================== */
+
+@media (max-width:700px) {
+    .homePage .homePage-base .head .head-1 .head-text {
+        display: none;
+    }
+    .homePage .homePage-base .head .head-1 {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width:750px) {
+    .homePage .homePage-base .box-3 .box-3-innerbase {
+        grid-template-columns: repeat(auto-fit, 80%);
+    }
+}
+
+@media (max-width:630px) {
+    .homePage .homePage-base .head-text {
+        display: none;
+    }
+    .homePage .homePage-base .ss-head {
+        display: block;
+    }
+    .sidebar~.homePage .homePage-base .box-3 .box-3-innerbase {
+        grid-template-columns: repeat(auto-fit, 100%);
+    }
+    .sidebar.close~.homePage .homePage-base .box-3 .box-3-innerbase {
+        grid-template-columns: repeat(auto-fit, 100%);
+    }
+    .homePage .homePage-base .box-3 .box-3-innerbase>.box-3-stats-base {
+        flex-direction: column-reverse;
+        padding: 10px;
+    }
+}
+
+
+/* ======================================================================================*/
+
+@media (max-width:500px) {
+    .homePage .homePage-base .box-2 .box-2_1_1 {
+        height: auto;
+    }
+    .homePage .homePage-base .box-2 .box-2_1_1 .box-cont {
+        background: none;
+    }
+    .sidebar {
+        z-index: 200;
+        width: 90%;
+    }
+    .homePage {
+        z-index: 90;
+    }
+    .homePage .homePage-base .head .head-1 .head-text .pannel-heading {
+        display: none;
+    }
+    .homePage .homePage-base .head .head-1 .Profile {
+        background: none;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-1 .pro-img {
+        height: 40px;
+        width: 40px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-name {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-1 .pro-name i {
+        font-size: 30px;
+    }
+    .sidebar.close~.homePage .homePage-base .box-3 .box-3-innerbase {
+        /* background-color: red; */
+        padding: 10px;
+    }
+    .homePage .homePage-base .box-3 .box-3-innerbase>.box-3-stats-base {
+        flex-direction: column-reverse;
+        padding: 10px;
+    }
+    .homePage .homePage-base .v1_2 .v1_3 .v1_4 .v1_5 .v2_6 .v2_9 i {
+        font-size: 30px;
+    }
+    .homePage .homePage-base .box-2 .box-2_1_1 h1 {
+        font-size: 20px;
+    }
+}

@@ -241,46 +241,26 @@
                 </div>
                 <div class="s1_1" id="sec2">
                     <div class="s1_2">
-                        <div class="filters">
-                            <div class="inputbase"> 
-                                <input type="search" name="cname" placeholder="Company Name"> 
-                                <input type="search" name="post" placeholder="Post"> 
-                                <input type="button" name="sreach" id="sreach" value="Sreach">
-                            </div>
-                            <hr>
-                        </div>
+                        
                         <div class="table_base">
                             <form action="" method="">
                                 <table>
                                     <thead>
                                         <tr>
                                             <th> S.No. </th>
-                                            <th> Company Name </th>
                                             <th> Post </th>
-                                            <th> Post Status </th>
-                                            <th> Selection Status </th>
-                                            <th> Action </th>
+                                            <th>  Status </th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <% for(var i=0;i<q.length;i++) { %> 
                                         <tr>
-                                            <td> <div class="data"> 1 </div> </td>
-                                            <td> <div class="data"> Infosys </div> </td>
-                                            <td> <div class="data"> Software Engieneer </div> </td>
-                                            <td> 
-                                                <div class="data"> 
-                                                        <span>OPEN/CLOSE</span>
-                                                </div> 
-                                            </td>
-                                            <td> <div class="data"> Selected /Placed /Rejected </div> </td>
-                                            <td>
-                                                <div class="data">    
-                                                    <a href="#">
-                                                        <input type="button" value="View">
-                                                    </a>
-                                                </div>
-                                            </td>
+                                            <td> <div class="data"> <%= i+1 %> </div> </td>
+                                            <td> <div class="data"> <%= q[i].name %> </div> </td>
+                                            <td> <div class="data"> <%= q[i].status %> </div> </td>
+                                           
                                         </tr>
+                                        <% } %>
                                     </tbody>
                                 </table>
                             </form>

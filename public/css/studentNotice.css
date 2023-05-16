@@ -1,0 +1,205 @@
+.s1_1 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: aqua; */
+}
+
+.s1_1 .s1_2 {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: aquamarine; */
+}
+
+.s1_1 .s1_2 .filters {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* background-color: antiquewhite; */
+}
+
+.s1_1 .s1_2 .filters .inputbase {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin-top: 10px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.s1_1 .s1_2 .filters .inputbase input {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: var(--clr-4);
+    color: var(--clr-5);
+}
+
+.s1_1 .s1_2 .filters .inputbase input:nth-child(3) {
+    background: linear-gradient(45deg, var(--lg-1), var(--lg-2));
+    font-weight: bold;
+    color: var(--clr-3);
+    letter-spacing: 1px;
+}
+
+.s1_1 .s1_2 .table_base {
+    max-height: 300px;
+    width: 100%;
+    padding: 10px;
+    overflow: auto;
+    /* background-color: #0000dc; */
+}
+
+.s1_1 .s1_2 .table_base table {
+    height: auto;
+    width: 100%;
+    border-collapse: collapse;
+    /* border: px solid #0000dc; */
+}
+
+.s1_1 .s1_2 .table_base table tbody td,
+.s1_1 .s1_2 .table_base table thead th {
+    border: 2px solid var(--clr-2);
+    width: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.s1_1 .s1_2 .table_base table thead th {
+    background-color: var(--clr-4);
+}
+
+.s1_1 .s1_2 .table_base table thead th,
+.s1_1 .s1_2 .table_base table tbody td .data {
+    color: var(--clr-5);
+}
+
+.s1_1 .s1_2 .table_base table tbody td:last-child .data {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.s1_1 .s1_2 .table_base table tbody td:last-child .data a {
+    text-decoration: none;
+}
+
+.s1_1 .s1_2 .table_base table tbody td:last-child .data a input {
+    height: auto;
+    width: auto;
+    padding: 5px 10px 5px 10px;
+    font-size: 1rem;
+    outline: transparent;
+    /* border: none; */
+}
+
+.box-content button {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    font-size: 15px;
+    background-color: var(--clr-5);
+    color: var(--clr-3);
+    gap: 5px;
+}
+
+.box-content .box-button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+/* ====================================================================================== */
+
+
+/* ====================================================================================== */
+
+
+/* ====================================================================================== */
+
+@media (max-width:1300px) {}
+
+@media (max-width:1000px) {}
+
+@media (max-width:900px) {
+    .s1_1 .s1_2 .filters .inputbase {
+        flex-direction: column;
+    }
+    .s1_1 .s1_2 .filters .inputbase input {
+        width: 80%;
+    }
+    .box-content .box-button {
+        flex-direction: column;
+    }
+    .s1_1 .s1_2 .table_base table tbody td:last-child .data a input {
+        width: 100px;
+        /* background-color: aquamarine; */
+    }
+    .s1_1 .s1_2 .table_base table {
+        width: 1000px;
+    }
+}
+
+
+/* ====================================================================================== */
+
+@media (max-width:800px) {}
+
+
+/* ====================================================================================== */
+
+@media (max-width:700px) {}
+
+@media (max-width:750px) {}
+
+@media (max-width:630px) {}
+
+
+/* ======================================================================================*/
+
+@media (max-width:500px) {
+    .sidebar {
+        z-index: 200;
+        width: 90%;
+    }
+    .homePage {
+        z-index: 90;
+    }
+    .homePage .homePage-base .head .head-1 .head-text .pannel-heading {
+        display: none;
+    }
+    .homePage .homePage-base .head .head-1 .Profile {
+        background: none;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-1 .pro-img {
+        height: 40px;
+        width: 40px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-name {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+    .homePage .homePage-base .head .head-1 .Profile .pro-1 .pro-name i {
+        font-size: 30px;
+    }
+}

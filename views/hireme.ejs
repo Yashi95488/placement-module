@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SYTLE SHEET LINK -->
     <link rel="stylesheet" href="css/styleStudent.css">
-    <link rel="stylesheet" href="css/companyapplied.css">
+    <link rel="stylesheet" href="css/hierme.css">
     <!-- CDN Library link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- charts CDN -->
@@ -18,7 +18,7 @@
     <script src="./JS/JQFile.js"></script>
     <!-- ICON LIBRARY -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <title>Student | Placement | Company Applied</title>
+    <title>Student | Placement</title>
 </head>
 <body onkeydown="if(!event.target.matches('input')&&!event.target.matches('textarea'))return!1" oncontextmenu="return!1" onselectstart="return!1" ondragstart="return!1">
  <!-- Side Nav Bar -->
@@ -127,7 +127,9 @@
                             Semester Registration
                         </div>
                         
-                        <div class="subdata item1" onclick="window.location.replace('create_resume_form.php');"> Create Your Resume </div>
+                        <div class="subdata item1" onclick="window.location.replace('create_resume_form.php');">
+                            Create Your Resume
+                        </div>
                     </div>
                 </div>
                 <!-- PLACEMENT -->
@@ -206,7 +208,7 @@
             <div class="head">
                 <div class="head-1">
                     <div class="head-text">
-                        <div class="pannel-heading"> Placement | Company Applied </div>
+                        <div class="pannel-heading"> Placement </div>
                     </div>
                     <div class="Profile">
                         <div class="pro-1">
@@ -224,7 +226,7 @@
             <!-- bread crums -->
             <div class="ss-head">
                 <div class="ss-inner-base">
-                    <h3>Placement | Company Applied</h3>
+                    <h3>Placement | Company</h3>
                 </div>
             </div>
             <div class='main'> 
@@ -233,54 +235,67 @@
                     <div class="box-2_1">
                         <div class="box-content">
                             <p id="title2">
-                                Company's You Applied  
+                                Company's 
                             </p>
                         </div>   
                     </div>
-                    <hr>
                 </div>
+                <hr>
                 <div class="s1_1" id="sec2">
                     <div class="s1_2">
+                        
                         <div class="filters">
                             <div class="inputbase"> 
                                 <input type="search" name="cname" placeholder="Company Name"> 
                                 <input type="search" name="post" placeholder="Post"> 
-                                <input type="button" name="sreach" id="sreach" value="Sreach">
+                                <input type="button" name="sreach" id="sreach" value="Search">
                             </div>
-                            <hr>
                         </div>
+                        <hr>
+                        
                         <div class="table_base">
                             <form action="" method="">
                                 <table>
                                     <thead>
                                         <tr>
                                             <th> S.No. </th>
-                                            <th> Company Name </th>
+                                 
                                             <th> Post </th>
-                                            <th> Post Status </th>
-                                            <th> Selection Status </th>
-                                            <th> Action </th>
+                                            <th> Description </th>
+                                            <th> Start Date </th>
+                                            <th> Last Date </th>
+                                            <th> 10th Criteria </th>
+                                            <th> 12th Criteria </th>
+                                            <th> Graduation Criteria </th>
+                                            <th>apply</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <% for(var i=0;i<q.length;i++) { %> 
                                         <tr>
-                                            <td> <div class="data"> 1 </div> </td>
-                                            <td> <div class="data"> Infosys </div> </td>
-                                            <td> <div class="data"> Software Engieneer </div> </td>
+                                            <td> <div class="data"><%= i+1 %></div> </td>
+                                            <td> <div class="data"><%= q[i].role %></div> </td>
                                             <td> 
                                                 <div class="data"> 
-                                                        <span>OPEN/CLOSE</span>
+                                                        <span><%= q[i].content %></span>
                                                 </div> 
                                             </td>
-                                            <td> <div class="data"> Selected /Placed /Rejected </div> </td>
+                                            <td> <div class="data"> <%= q[i].sdate %></div> </td>
+                                            <td> <div class="data"> <%= q[i].edate %></div> </td>
+                                            <td> <div class="data"> <%= q[i].per10 %></div> </td>
+                                            <td> <div class="data"> <%= q[i].per12 %></div> </td>
+                                            <td> <div class="data"> <%= q[i].grad %></div> </td>
                                             <td>
-                                                <div class="data">    
-                                                    <a href="#">
-                                                        <input type="button" value="View">
-                                                    </a>
+                                                <div class="data"> 
+                                                    <form action="/capply" method="post"> 
+                                                  
+                                                        <input type="checkbox" onchange="this.form.submit()" name="check" value="<%= q[i].role%>">
+                                                </form>  
+
                                                 </div>
                                             </td>
                                         </tr>
+                                        <% } %>
                                     </tbody>
                                 </table>
                             </form>

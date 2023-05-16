@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
+   
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/newPost.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="css/noticeStyle.css">
     <link rel="stylesheet" href="css/main2.css">
     <!-- CDN Library link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <!-- charts CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- ICON LIBRARY -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- angular Js Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <title>Placement | Company</title>
-    <script src="JS/jquery.js"></script>
+    <script src="./JS/jquery.js"></script>
     <script>
         $(document).ready(function() {
+            
             $('#place1').click(function() {
                 $(this).hide();
                 $('#place2').show();
+                
                 $('#title1').show();
                 $('#title2').hide();
+                
                 $('#sec1').show();
                 $('#sec2').hide();
             });
+    
             $('#place2').click(function() {
                 $(this).hide();
                 $('#place1').show();
+                
                 $('#title2').show();
                 $('#title1').hide();
+                
                 $('#sec2').show();
                 $('#sec1').hide();
             });
@@ -41,7 +49,7 @@
     </script>
     </head>
 <body onkeydown="if(!event.target.matches('input')&&!event.target.matches('textarea'))return!1" oncontextmenu="return!1" onselectstart="return!1" ondragstart="return!1">
-     <!-- Side Nav Bar -->
+    <!-- Side Nav Bar -->
     <nav class="sidebar close">
         <!-- NavBar Heading and Logo -->
         <header>
@@ -60,17 +68,20 @@
             <div class="menu">
                 <ul class="menu-links">
                     <!-- Dashboard -->
-                    <li class="nav-links" id="subEle1" onclick="window.location.replace('Placement-module/major/company');">
+                    <li class="nav-links" id="subEle1" onclick="window.location.replace('/MajorProject/admin');">
                         <a href="#">
                             <i class="uil uil-estate icon"></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
                     <!-- Academic -->
-                    <li class="nav-links" >
-                        <a href="studentSection.php" id="subEle2a">
+                    <li class="nav-links" id="subEle2">
+                        <a href="#" id="subEle2a">
                             <i class="uil uil-brain icon"></i>
-                            <span class="text nav-text">Student</span>
+                            <span class="text nav-text">Academic</span>
+                            <div class="submenuindicator">
+                                <i class="uil uil-angle-right icon"></i>
+                            </div>
                         </a>
                     </li>
                     <!-- Exam -->
@@ -83,6 +94,14 @@
                             </div>
                         </a>
                     </li>
+                    <!-- Notice -->
+                    <li class="nav-links" id="subEle4" onclick="window.location.replace('notice.php');">
+                        <a href="#">
+                            <i class="uil uil-bell icon"></i>
+                            <span class="text nav-text">Notice</span>
+                        </a>
+                    </li>
+                    
                     <!-- Exam -->
                     <li class="nav-links" id="subEle6">
                         <a href="#">
@@ -91,6 +110,13 @@
                             <div class="submenuindicator">
                                 <i class="uil uil-angle-right icon"></i>
                             </div>
+                        </a>
+                    </li>
+                    <!-- Staff -->
+                    <li class="nav-links" id="subEle7" onclick="window.location.replace('staffFaculty.php');">
+                        <a href="#">
+                            <i class="uil uil-book-alt icon"></i>
+                            <span class="text nav-text">Staff/Faculty</span>
                         </a>
                     </li>
                     <!-- Theme -->
@@ -110,29 +136,46 @@
                                 <input title="dark" type="radio" name="theme" id="dark">
                             </fieldset>
                         </form>
-                    </li>
+                    </li> 
                 </ul>
-                 <!-- PLACEMENT STUDENT -->
+ 
+                <!-- ACADMICS -->
+                <div class="sub-content-link" id="Acadmic-side-sub-menu">
+                    <i class="uil uil-angle-left-b"></i>
+                    <div class="sub-content-link-inner">
+                        <div class="subdata item1" onclick="window.location.replace('studentSection.php')">
+                            Student
+                        </div>
+                        <div class="subdata item1" onclick="window.location.replace('enrollmentform.php');">
+                            Enrollment From
+                        </div>
+                        <div class="subdata item1" onclick="window.location.replace('Genrate_time_table.php');">
+                            Genrate time table
+                        </div>
+                    </div>
+                </div>
+                <!-- PLACEMENT -->
                 <div class="sub-content-link" id="Placement-side-sub-menu">
                     <i class="uil uil-angle-left-b"></i>
                     <div class="sub-content-link-inner">
-                      <div class="subdata item1" onclick="window.location.replace('newpost.php');">
-                          New Post
-                      </div>
-                      <div class="subdata item1" onclick="window.location.replace('Criteria.php');">
-                          Criteria
-                      </div>
-                      <div class="subdata item1" onclick="window.location.replace('newpostHistory.php');">
-                          History
-                      </div>
+                        <div class="subdata item1" onclick="window.location.replace('placement.php');">
+                            Company
+                        </div>
                     </div>
                 </div>
+                
                 <!-- EXAM -->
                 <div class="sub-content-link" id="exam-side-sub-menu" >
                     <i class="uil uil-angle-left-b"></i>
                     <div class="sub-content-link-inner">
-                        <div class="subdata item1" onclick="window.location.replace('createTest.php');">
-                            Create New Exam
+                        <div class="subdata item1" onclick="window.location.replace('result.php');">
+                            Result
+                        </div>
+                        <div class="subdata item1" onclick="window.location.replace('viewResult.php');">
+                            View Result
+                        </div>
+                        <div class="subdata item1" onclick="window.location.replace('admitcard.php');">
+                            Admit Card
                         </div>
                     </div>
                 </div>
@@ -172,6 +215,7 @@
                                 <img src="../images/male.jpg" alt="NA" height="100%" width="100%">
                             </div>
                             <div class="pro-name">
+                                <i class="uil uil-setting" title="Settings"></i>
                                 <i class="uil uil-signout icon" title="Logout" id="logoutoption"></i>
                             </div>
                         </div>
@@ -184,52 +228,109 @@
                     <h3>Placement</h3>
                 </div>
             </div>
-            <div class='main'>
+            <div class='main'> 
                 <!-- home Page Box-2 -->
                 <div class="box-2">
                     <div class="box-2_1">
                         <div class="box-content">
+                            <div class="box-button">
+                                <button id="place1">Publish View Notice</button>
+                                <button id="place2">View Notice's</button>
+                            </div>
+                            
                             <p id="title1">
-                                New Post
+                                Publish New Notice
                             </p>
-                        </div>
+                            <p id="title2">
+                                All Notices
+                            </p>
+                    
+                        </div>   
                     </div>
                     <hr>
                 </div>
+                
                 <div class="s1_1" id="sec1">
                     <div class="s1_2">
                         <div class="table_base">
                             <div class="newNoticeBase">
-                                <form action="/newpost" method="post">
+                                
+                                <form action="/cnotice" method="post">
                                     <div class="form-header">
                                         <div class="form-title">
-                                            Create New Form for Post
+                                            New Notice                                        
                                         </div>
                                     </div>
                                     <div class="form-body">
-                                      <input type="text" name="role" id="" placeholder="Role">
-                                      <p>Starting Date</p>
-                                      <input type="date" name="sdate" id="">
-                                      <p>End Date</p>
-                                      <input type="date" name="edate" id="">
-                                      <input type="text" name="noticelink" id="" placeholder="link (If Any for form Post)">
-                                      <textarea name="content">Content</textarea>
-                                      <input type="text" name="criteria1" id="" placeholder="12th Criteria">
-                                      <input type="text" name="criteria2" id="" placeholder="10th Criteria">
-                                      <input type="text" name="criteria3" id="" placeholder="CGPA Criteria">
+                                        <input type="text" name="noticetitle" id="" placeholder="Title for Notice">
+                                        <input type="text" name="noticelink" id="" placeholder="link (If Any)">
+                                        <textarea name="NoticeContent">Content</textarea>
                                     </div>
                                     <div class="form-footer">
-                                        <input type="submit" name="Genrate" value="Post" type="submit">
+                                        <input type="submit" name="publish" value="Publish">
                                     </div>
                               </form>
-                            </div>
+                            
+                            
+                            
+                            
+                        </div>
                         </div>
                     </div>
                 </div>
+                <div class="s1_1" id="sec2">
+                    <div class="s1_2">
+                        <div class="filters">
+                            <div class="inputbase">
+                                <input type="text" name="noticetitle" id="noticetitle" placeholder="Title Name"> 
+                                <input type="month" name="month" id="month">
+                                <input type="button" name="sreach" id="sreach" value="Sreach">
+                            </div>
+                        </div>
+                        <div class="table_base">
+                            <form action="/cnotice" method="post">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th> S.No. </th>
+                                            <th> Title </th>
+                                            <th> Content </th>
+                                            <th> Date </th>
+                                            <th> Link </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> <div class="data">  1 </div> </td>
+                                            <td> <div class="data"> title </div> </td>
+                                            <td style="overflow:hidden;max-width:150px;"> <div class="data">Content</div> </td>
+                                            <td> <div class="data"> date </div> </td>
+                                            <td> <div class="data"> <a href="#">N/A</a> </div> </td>
+                                            <td>
+                                                <div class="data">    
+                                                    <a href="#">
+                                                        <input type="button" name="editnotice" value="Edit">
+                                                    </a>
+                                                    <a href="#">
+                                                        <input type="button" name="deletenotice" value="Delete">
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+               
             </div>
+            
         </div>
     </section>
     <!-- JavaScript file for Theme Changing -->
-    <script src="JS/file1.js"></script>
+    <script src="../JS/file1.js"></script>
 </body>
 </html>
