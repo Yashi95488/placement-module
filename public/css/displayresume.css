@@ -1,0 +1,52 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: rgb(73, 73, 73);
+    /* font-size: 12px; */
+}
+
+h1 {
+    letter-spacing: 5px;
+}
+
+p {
+    letter-spacing: 5px;
+}
+
+span,
+li {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+page {
+    overflow: hidden;
+    background-color: rgb(236, 236, 236);
+    display: block;
+    margin-bottom: 0.5cm;
+    margin: 0 auto;
+    /* box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5); */
+}
+
+page[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+}
+
+page[size="A4"][layout="landscape"] {
+    width: 29.7cm;
+    height: 21cm;
+}
+
+#bl {
+    height: 985px;
+    border-top-left-radius: 30px;
+}
+
+@media print {
+    body,
+    page {
+        margin: 0;
+        box-shadow: 0;
+    }
+}

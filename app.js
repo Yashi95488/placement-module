@@ -106,9 +106,13 @@ const timetableSchema={
 	f8:String
 }
 const applySchema={
-    id: Number,
     status: String,
-    name: String
+    name: String,
+    sname: String,
+    email: String,
+    per10: String,
+    per12: String,
+    id: Number
 };
 const noticeSchema={
     noticetitle: String,
@@ -116,7 +120,47 @@ const noticeSchema={
     NoticeContent: String,
     Date1: String
     };
-    const notice=mongoose.model("notice",noticeSchema);
+const resumeSchema={
+    name: String,
+    domain: String,
+    email: String,
+    phone: String,
+    about: String,
+    skills: String,
+    hobbies: String,
+    tools: String,
+    lang: String,
+    org_name1: String,
+    org_start_date1: String,
+    org_end_date1: String,
+    org_des1: String,
+    org_name2: String,
+    org_start_date2: String,
+    org_end_date2: String,
+    org_des2: String,
+    project_name1: String,
+    project_des1: String,
+    project_name2: String,
+    project_des2: String,
+    project_name3: String,
+    project_des3: String,
+    Certificate_name1: String,
+    Certificate_org_name1: String,
+    Certificate_start_date1: String,
+    Certificate_end_date1: String,
+    Certificate_name2: String,
+    Certificate_org_name2: String,
+    Certificate_start_date2: String,
+    Certificate_end_date2: String,
+    Certificate_name3: String,
+    Certificate_org_name3: String,
+    Certificate_start_date3: String,
+    Certificate_end_date3: String,
+    id: Number
+
+};
+const resume=mongoose.model("resume",resumeSchema);
+const notice=mongoose.model("notice",noticeSchema);
 const apply=mongoose.model("appl",applySchema);
 const table=mongoose.model("table",timetableSchema);
 const post=mongoose.model("post",postSchema);
@@ -171,13 +215,80 @@ app.get("/notice",function(req,res){
 app.post("/capply",function(req,res){
     const abc=req.body.check;
     const a="In Review";
-    const b=new apply({
-        id: session.userid,
-        name: abc,
-        status: a
+    student.findOne({id: session.userid}).then((stud)=>{
+        const b=new apply({
+            id: session.userid,
+            name: abc,
+            status: a,
+            email: stud.email,
+            sname: stud.fname+" "+stud.mname+" "+stud.lname,
+            per10: stud.tenagri,
+            per12: stud.tewagri,
+            id: stud.id
+        });
+        b.save();
     });
-    b.save();
+    
+    //b.save();
     res.redirect("/");
+})
+app.get("/create_resume",function(req,res){
+    res.render("create_resume.ejs");
+})
+app.post("/create_resume",function(req,res){
+    const a=new resume({
+        name: req.body.name,
+    domain: req.body.domain,
+    email: req.body.email,
+    phone: req.body.phone,
+    about: req.body.about,
+    skills: req.body.skills,
+    hobbies: req.body.hobbies,
+    tools: req.body.tools,
+    lang: req.body.lang,
+    org_name1: req.body.org_name1,
+    org_start_date1: req.body.org_start_date1,
+    org_end_date1: req.body.org_end_date1,
+    org_des1: req.body.org_des1,
+    org_name2: req.body.org_name2,
+    org_start_date2: req.body.org_start_date2,
+    org_end_date2: req.body.org_end_date2,
+    org_des2: req.body.org_des2,
+    project_name1: req.body.project_name1,
+    project_des1: req.body.project_des1,
+    project_name2: req.body.project_name2,
+    project_des2: req.body.project_des2,
+    project_name3: req.body.project_name3,
+    project_des3: req.body.project_des3,
+    Certificate_name1: req.body.Certificate_name1,
+    Certificate_org_name1: req.body.Certificate_org_name1,
+    Certificate_start_date1: req.body.Certificate_start_date1,
+    Certificate_end_date1: req.body.Certificate_end_date1,
+    Certificate_name2: req.body.Certificate_name2,
+    Certificate_org_name2: req.body.Certificate_org_name2,
+    Certificate_start_date2: req.body.Certificate_start_date2,
+    Certificate_end_date2: req.body.Certificate_end_date2,
+    Certificate_name3: req.body.Certificate_name3,
+    Certificate_org_name3: req.body.Certificate_org_name3,
+    Certificate_start_date3: req.body.Certificate_start_date3,
+    Certificate_end_date3: req.body.Certificate_end_date3,
+    id: session.userid
+    })
+    a.save();
+    res.render("displayresume.ejs",{ab: a});
+})
+app.post("/getstudentdata",function(req,res){
+    const ab=req.body.sid;
+    const abc=[];
+    apply.find({name: ab},function(err,ques){
+        console.log(ques);
+        res.render("s2.ejs",{q: ques});
+        
+    
+        
+    })
+    
+    
 })
 app.get("/companyapplied",function(req,res){
     apply.find({id: session.userid},function(err,ques){
