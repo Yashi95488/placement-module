@@ -23,18 +23,18 @@
             <div class="col-12 d-flex justify-content-between align-items-center p-2">
                 <!-- head left box -->
                 <div class="p-2 d-flex justify-content-center align-items-center flex-column">
-                    <h1>Vishesh Saxena</h1>
-                    <p>Web Developer</p>
+                    <h1><%= ab.name %></h1>
+                    <p><%= ab.domain %></p>
                 </div>
                 <!-- head right box -->
                 <div class="p-2 d-flex justify-content-center align-items-start flex-column">
                     <span>
                         <i class="uil uil-envelope"></i>
-                        visheshsaxena7777@gmail.com
+                        <%= ab.email %>
                     </span>
                     <span>
                         <i class="uil uil-phone-alt"></i>
-                        7355288989
+                        <%= ab.phone %>
                     </span>
                 </div>
             </div>
@@ -81,19 +81,19 @@
                 <!-- Skills -->
                 <div class="border-bottom border-dark">
                     <h5 class="col-12 pt-2">Skills</h5>
-                    <span>Skills</span>
+                    <span><%= ab.skills %></span>
                 </div>
 
                 <!-- Languages -->
                 <div class="border-bottom border-dark">
                     <h5 class="col-12 pt-2">Languages</h5>
-                    <span>English, Hindi</span>
+                    <span><%= ab.lang %></span>
                 </div>
 
                 <!-- Hobbies -->
                 <div class="border-bottom border-dark">
                     <h5 class="col-12 pt-2">Hobbies</h5>
-                    <span>Writting Poems, Drawing, Gyming</span>
+                    <span><%= ab.hobbies %></span>
                 </div>
 
                 <!-- Certificates -->
@@ -102,20 +102,20 @@
                     <ul>
                         <li>
                             <div class="d-flex justify-content-center align-items-start flex-column">
-                                <span class="fw-bold">Advanced PHP </span>
-                                <span>Udemy | 2019-2023</span>
+                                <span class="fw-bold"><%= ab.Certificate_name1 %> </span>
+                                <span><%= ab.Certificate_org_name1 %> | <%= ab.Certificate_start_date1 %>-<%= ab.Certificate_end_date1 %></span>
                             </div>
                         </li>
                         <li>
                             <div class="d-flex justify-content-center align-items-start flex-column">
-                                <span class="fw-bold">Advanced PHP </span>
-                                <span>Udemy | 2019-2023</span>
+                                <span class="fw-bold"><%= ab.Certificate_name2 %> </span>
+                                <span><%= ab.Certificate_org_name2 %> | <%= ab.Certificate_start_date2 %> - <%= ab.Certificate_end_date2 %></span>
                             </div>
                         </li>
                         <li>
                             <div class="d-flex justify-content-center align-items-start flex-column">
-                                <span class="fw-bold">Advanced PHP </span>
-                                <span>Udemy | 2019-2023</span>
+                                <span class="fw-bold"><%= ab.Certificate_name3 %> </span>
+                                <span><%= ab.Certificate_org_name3 %> | <%= ab.Certificate_start_date3 %>-<%= ab.Certificate_end_date3 %></span>
                             </div>
                         </li>
                     </ul>
@@ -128,12 +128,7 @@
                     <div class="p-2 col-12 border-bottom-0">
                         <h5>About</h5>
                         <span>
-                            Web developer with a strong focus on solving problems and 3 years of expertise. I took part 
-                            in the creation and application of web based solutions. supporting the business goals and 
-                            initiatives of the organization while getting practical experience. gaining knowledge of 
-                            various systems, tools, and development methods. In addition, I created numerous projects 
-                            based on web development and numerous UI Templates while working on web 
-                            development.
+                            <%= ab.about %>
                         </span>
                     </div>
 
@@ -144,26 +139,18 @@
                             <ul>
                                 <li>
                                     <h6>Trainee Web Developer</h6>
-                                    <span>BHEL Bharat Heavy Electricals Limited</span><br>
+                                    <span><%= ab.org_name1 %></span><br>
                                     <span>July 2020 - Aug 2020, Jhansi, India</span><br>
                                     <span>
-                                        As a Web Developer at BHEL, I worked closely with the IT Department to enhance Build and 
-                                        HR Management System experience through new UI trends, wireframes, user journeys, 
-                                        Backend and documentation. I was responsible for creating and ensuring a seamless user 
-                                        experience. My role also included conducting user research and implementing concept for 
-                                        the systems so that then system can be handled in more efficient way.
+                                        <%= ab.org_des1 %>
                                     </span>
                                 </li>
                                 <li class="pt-3">
                                     <h6>Web Developer Intern</h6>
-                                    <span>GreenBhumi</span><br>
+                                    <span><%= ab.org_name2 %></span><br>
                                     <span>July 2020 - Aug 2020, Jhansi, India</span><br>
                                     <span>
-                                        As a Web Developer at BHEL, I worked closely with the IT Department to enhance Build and 
-                                        HR Management System experience through new UI trends, wireframes, user journeys, 
-                                        Backend and documentation. I was responsible for creating and ensuring a seamless user 
-                                        experience. My role also included conducting user research and implementing concept for 
-                                        the systems so that then system can be handled in more efficient way.
+                                        <%= ab.org_des2 %>
                                     </span>
                                 </li>
                             </ul>
@@ -176,28 +163,21 @@
                         <div class="col-12">
                             <ul>
                                 <li>
-                                    <span class="fw-bold"> Placement Module Development in a ERP System</span><br>
+                                    <span class="fw-bold"> <%= ab.project_name1 %></span><br>
                                     <span>
-                                       Created a Web based ERP System which helps in placement process. It helps manage the 
-                                       entire placement cycle, including scheduling interviews, candidate selection, conducting tests 
-                                       for student, and Job offer issuance, all within the ERP system and predicting the companies 
-                                       for which they are eligible.
+                                        <%= ab.project_des1 %>
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="fw-bold"> Student Information Management System</span><br>
+                                    <span class="fw-bold"> <%= ab.project_name2 %></span><br>
                                     <span>
-                                       Created a Web Application that oversees the management of student data on a college 
-                                       platform makes use of bulk data, and tests it for ease of data processing and uses the local 
-                                       database to store the data of the student
+                                        <%= ab.project_des2 %>
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="fw-bold"> Labour Management system</span><br>
+                                    <span class="fw-bold"> <%= ab.project_name2 %></span><br>
                                     <span>
-                                       Created a Software which refers to the expectation for companies to operate in compliance 
-                                       with legal and customer requirements for providing the fair workers, for creating safe and 
-                                       humane working conditions
+                                        <%= ab.project_des2 %>
                                     </span>
                                 </li>
                             </ul>

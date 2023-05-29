@@ -1,27 +1,32 @@
-
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- SYTLE SHEET LINK -->
     <link rel="stylesheet" href="css/styleStudent.css">
-    <link rel="stylesheet" href="css/ss.css">
+    <link rel="stylesheet" href="css/trainingStyle.css">
+
     <!-- CDN Library link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- charts CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
     <!-- JQuery File for NavBar -->
-   <script src="js/JQFile.js"></script>
+   <script src="./JS/JQFile.js"></script>
+
     <!-- ICON LIBRARY -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <!-- angular Js Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
     <title>Student | Dashboard</title>
-    
 </head>
+
 <body onkeydown="if(!event.target.matches('input')&&!event.target.matches('textarea'))return!1" oncontextmenu="return!1" onselectstart="return!1" ondragstart="return!1">
+
     <!-- Side Nav Bar -->
     <nav class="sidebar close">
         <!-- NavBar Heading and Logo -->
@@ -30,16 +35,19 @@
                 <span class="image">
                     <img src="./images/download.jpg" alt="logo">
                 </span>
+
                 <div class="text header-text">
                     <span class="name">Graphic Era University</span>
                 </div>
             </div>
             <i class="uil uil-angle-right-b toggle" id="side-toggle-btn"></i>
         </header>
+
         <!-- Side Nav Bar list Content -->
         <div class="menu-bar">
             <div class="menu">
                 <!-- Sreach -->
+
                 <ul class="menu-links">
                     <!-- Dashboard -->
                     <li class="nav-links" id="subEle1" onclick="window.location.replace('/MajorProject/student')">
@@ -114,11 +122,12 @@
                         </form>
                     </li>
                 </ul>
+
                 <!-- ACADMICS -->
                 <div class="sub-content-link" id="Acadmic-side-sub-menu">
                     <i class="uil uil-angle-left-b"></i>
                     <div class="sub-content-link-inner">
-                        <div class="subdata item1" onclick="window.location.replace('/profile');">
+                        <div class="subdata item1" onclick="window.location.replace('attendance.php');">
                             Profile
                         </div>
                         <div class="subdata item1" onclick="window.location.replace('timetable.php');">
@@ -127,10 +136,8 @@
                         <div class="subdata item1" onclick="window.location.replace('sem_registration.php');">
                             Semester Registration
                         </div>
-                        <div class="subdata item1" onclick="window.location.replace('enrollmentform.php');">
-                            Enrollment Form
-                        </div>
-                        <div class="subdata item1" onclick="window.location.replace('https://www.overleaf.com/latex/templates/indian-institute-of-technology-bombay-resume/fgnpzhygqxrq.php');">
+                    
+                        <div class="subdata item1" onclick="window.location.replace('create_resume_form.php');">
                             Create Your Resume
                         </div>
                     </div>
@@ -140,19 +147,16 @@
                     <i class="uil uil-angle-left-b"></i>
                     <div class="sub-content-link-inner">
                         <div class="subdata item1" onclick="window.location.replace('hierMe.php');">
-                            Company Post
+                            Company
                         </div>
                         <div class="subdata item1" onclick="window.location.replace('companyApplied.php');">
                             Apply Company
                         </div>
-                        <div class="subdata item1" onclick="window.location.replace('training.php');">
+                        <div class="subdata item1" onclick="window.location.replace('traning.php');">
                             Training
                         </div>
-                        <div class="subdata item1" onclick="window.location.replace('training.php');">
+                        <div class="subdata item1" onclick="window.location.replace('test_login.php');">
                             Take Test
-                        </div>
-                        <div class="subdata item1" onclick="window.location.replace('training.php');">
-                            cpmpanies eligable
                         </div>
                     </div>
                 </div>
@@ -189,9 +193,11 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </nav>
+
     <!-- Logout Confirmation Dialog Box -->
     <div class="overlay">
         <div class="dialogbase">
@@ -210,9 +216,11 @@
             </div>
         </div>
     </div>
+
     <!-- Dashboard Content Box -->
     <section class="homePage">
         <div class="homePage-base">
+
             <!-- home Page Header -->
             <div class="head">
                 <div class="head-1">
@@ -232,21 +240,111 @@
                     </div>
                 </div>
             </div>
+
             <!-- bread crums -->
             <div class="ss-head">
                 <div class="ss-inner-base">
                     <h3> Dashboard </h3>
                 </div>
             </div>
-            <!-- home Page Box-2 -->
-            <a href="c++.php"><img src="../images/c++.png"></a>
-            <a href="java.php"><img src="../images/java.png"></a>
-            <a href="python%20.php"><img src="../images/python.jpg"></a>
-            <a href="sql.php"><img src="../images/sql.png"></a>
-            <a href="data_structure.php"><img src="../images/data_structure.jpg"></a>
+
             
+
+            <div class="box-3">
+                <div class="box-3-innerbase">
+                    
+                    <div class="box-3-stats-base">
+                        <div class="box-3-content">
+                            <span>C++</span>
+                            <span></span>
+                        </div>
+                        <div class="box-3-avtar">
+                            <button>Start Now</button>
+                        </div>
+                    </div>
+
+                    <div class="box-3-stats-base">
+                        <div class="box-3-content">
+                            <span>Python</span>
+                            <span></span>
+                        </div>
+                        <div class="box-3-avtar">
+                            <button>Start Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="box-3-stats-base">
+                        <div class="box-3-content">
+                            <span>JAVA</span>
+                            <span></span>
+                        </div>
+                        <div class="box-3-avtar">
+                            <button>Start Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="box-3-stats-base">
+                        <div class="box-3-content">
+                            <span>C Programming</span>
+                            <span></span>
+                        </div>
+                        <div class="box-3-avtar">
+                            <button>Start Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="box-3-stats-base">
+                        <div class="box-3-content">
+                            <span>Machine Learning</span>
+                            <span></span>
+                        </div>
+                        <div class="box-3-avtar">
+                            <button>Start Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="box-3-stats-base">
+                        <div class="box-3-content">
+                            <span>IOT</span>
+                            <span></span>
+                        </div>
+                        <div class="box-3-avtar">
+                            <button>Start Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="box-3-stats-base">
+                        <div class="box-3-content">
+                            <span>Figma</span>
+                            <span></span>
+                        </div>
+                        <div class="box-3-avtar">
+                            <button>Start Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="box-3-stats-base">
+                        <div class="box-3-content">
+                            <span>Adobe Illustrator</span>
+                            <span></span>
+                        </div>
+                        <div class="box-3-avtar">
+                            <button>Start Now</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+        </div>
     </section>
+
     <!-- JavaScript file for Theme Changing -->
-    <script src="js/javascript.js"></script>
+
+    <script src="./JS/javascript.js"></script>
+
+
 </body>
+
 </html>

@@ -159,6 +159,158 @@ const resumeSchema={
     id: Number
 
 };
+const testSchema = {
+	TestID: String,
+	ExamPassword: String,
+
+	ques1: String,
+	q1o1: String,
+	q1o2: String,
+	q1o3: String,
+	q1o4: String,
+	q1cans: String,
+
+	ques2: String,
+	q2o1: String,
+	q2o2: String,
+	q2o3: String,
+	q2o4: String,
+	q2cans: String,
+
+	ques3: String,
+	q3o1: String,
+	q3o2: String,
+	q3o3: String,
+	q3o4: String,
+	q3cans: String,
+
+	ques4: String,
+	q4o1: String,
+	q4o2: String,
+	q4o3: String,
+	q4o4: String,
+	q4cans: String,
+
+	ques5: String,
+	q5o1: String,
+	q5o2: String,
+	q5o3: String,
+	q5o4: String,
+	q5cans: String,
+
+	ques6: String,
+	q6o1: String,
+	q6o2: String,
+	q6o3: String,
+	q6o4: String,
+	q6cans: String,
+
+	ques7: String,
+	q7o1: String,
+	q7o2: String,
+	q7o3: String,
+	q7o4: String,
+	q7cans: String,
+
+	ques8: String,
+	q8o1: String,
+	q8o2: String,
+	q8o3: String,
+	q8o4: String,
+	q8cans: String,
+
+	ques9: String,
+	q9o1: String,
+	q9o2: String,
+	q9o3: String,
+	q9o4: String,
+	q9cans: String,
+
+	ques10: String,
+	q10o1: String,
+	q10o2: String,
+	q10o3: String,
+	q10o4: String,
+	q10cans: String,
+
+
+
+	ques11: String,
+	q11o1: String,
+	q11o2: String,
+	q11o3: String,
+	q11o4: String,
+	q11cans: String,
+
+	ques12: String,
+	q12o1: String,
+	q12o2: String,
+	q12o3: String,
+	q12o4: String,
+	q12cans: String,
+
+	ques13: String,
+	q13o1: String,
+	q13o2: String,
+	q13o3: String,
+	q13o4: String,
+	q13cans: String,
+
+	ques14: String,
+	q14o1: String,
+	q14o2: String,
+	q14o3: String,
+	q14o4: String,
+	q14cans: String,
+
+	ques15: String,
+	q15o1: String,
+	q15o2: String,
+	q15o3: String,
+	q15o4: String,
+	q15cans: String,
+
+	ques16: String,
+	q16o1: String,
+	q16o2: String,
+	q16o3: String,
+	q16o4: String,
+	q16cans: String,
+
+	ques17: String,
+	q17o1: String,
+	q17o2: String,
+	q17o3: String,
+	q17o4: String,
+	q17cans: String,
+
+	ques18: String,
+	q18o1: String,
+	q18o2: String,
+	q18o3: String,
+	q18o4: String,
+	q18cans: String,
+
+	ques19: String,
+	q19o1: String,
+	q19o2: String,
+	q19o3: String,
+	q19o4: String,
+	q19cans: String,
+
+	ques20: String,
+	q20o1: String,
+	q20o2: String,
+	q20o3: String,
+	q20o4: String,
+	q20cans: String,
+
+	codeQuestion: String,
+	sampleTest1: String,
+	sampleTest2: String,
+	CodeAns: String
+};
+const test=mongoose.model("test",testSchema);
 const resume=mongoose.model("resume",resumeSchema);
 const notice=mongoose.model("notice",noticeSchema);
 const apply=mongoose.model("appl",applySchema);
@@ -231,6 +383,176 @@ app.post("/capply",function(req,res){
     
     //b.save();
     res.redirect("/");
+})
+app.post("/createtest",function(req,res){
+    const ab=new test({
+        TestID: req.body.TestID,
+	ExamPassword: req.body.ExamPassword,
+	ques1: req.body.ques1,
+	q1o1: req.body.q1o1,
+	q1o2: req.body.q1o2,
+	q1o3: req.body.q1o3,
+	q1o4: req.body.q1o4,
+	q1cans: req.body.q1cans,
+	ques2: req.body.ques2,
+	q2o1: req.body.q2o1,
+	q2o2: req.body.q2o2,
+	q2o3: req.body.q2o3,
+	q2o4: req.body.q2o4,
+	q2cans: req.body.q2cans,
+	ques3: req.body.ques3,
+	q3o1: req.body.q3o1,
+	q3o2: req.body.q3o2,
+	q3o3: req.body.q3o2,
+	q3o4: req.body.q3o4,
+	q3cans: req.body.q3cans,
+	ques4: req.body.ques4,
+	q4o1: req.body.q4o1,
+	q4o2: req.body.q4o2,
+	q4o3: req.body.q4o3,
+	q4o4: req.body.q4o4,
+	q4cans: req.body.q4cans,
+	ques5: req.body.ques5,
+	q5o1: req.body.q5o1,
+	q5o2: req.body.q5o2,
+	q5o3: req.body.q5o3,
+	q5o4: req.body.q5o4,
+	q5cans: req.body.q5cans,
+	ques6: req.body.ques6,
+	q6o1: req.body.q6o1,
+	q6o2: req.body.q6o2,
+	q6o3: req.body.q6o3,
+	q6o4: req.body.q6o4,
+	q6cans: req.body.q6cans,
+	ques7: req.body.ques7,
+	q7o1: req.body.q7o1,
+	q7o2: req.body.q7o2,
+	q7o3: req.body.q7o3,
+	q7o4: req.body.q7o4,
+	q7cans: req.body.q7cans,
+	ques8: req.body.ques8,
+	q8o1: req.body.q8o1,
+	q8o2: req.body.q8o2,
+	q8o3: req.body.q8o3,
+	q8o4: req.body.q8o4,
+	q8cans: req.body.q8cans,
+	ques9: req.body.ques9,
+	q9o1: req.body.q9o1,
+	q9o2: req.body.q9o2,
+	q9o3: req.body.q9o3,
+	q9o4: req.body.q9o4,
+	q9cans: req.body.q9cans,
+	ques10: req.body.ques10,
+	q10o1: req.body.q10o1,
+	q10o2: req.body.q10o2,
+	q10o3: req.body.q10o3,
+	q10o4: req.body.q10o4,
+	q10cans: req.body.q10cans,
+	ques11: req.body.ques11,
+	q11o1: req.body.q11o1,
+	q11o2: req.body.q11o2,
+	q11o3: req.body.q11o3,
+	q11o4: req.body.q11o4,
+	q11cans: req.body.q11cans,
+	ques12: req.body.ques12,
+	q12o1: req.body.q12o1,
+	q12o2: req.body.q12o2,
+	q12o3: req.body.q12o3,
+	q12o4: req.body.q12o4,
+	q12cans: req.body.q12cans,
+	ques13: req.body.ques13,
+	q13o1: req.body.q13o1,
+	q13o2: req.body.q13o2,
+	q13o3: req.body.q13o3,
+	q13o4: req.body.q13o4,
+	q13cans: req.body.q13cans,
+	ques14: req.body.ques14,
+	q14o1: req.body.q14o1,
+	q14o2: req.body.q14o2,
+	q14o3: req.body.q14o3,
+	q14o4: req.body.q14o4,
+	q14cans: req.body.q14cans,
+	ques15: req.body.ques15,
+	q15o1: req.body.q15o1,
+	q15o2: req.body.q15o2,
+	q15o3: req.body.q15o3,
+	q15o4: req.body.q15o4,
+	q15cans: req.body.q15cans,
+	ques16: req.body.ques16,
+	q16o1: req.body.q16o1,
+	q16o2: req.body.q16o2,
+	q16o3: req.body.q16o3,
+	q16o4: req.body.q16o4,
+	q16cans: req.body.q16cans,
+	ques17: req.body.ques17,
+	q17o1: req.body.q17o1,
+	q17o2: req.body.q17o2,
+	q17o3: req.body.q17o3,
+	q17o4: req.body.q17o4,
+	q17cans: req.body.q17cans,
+	ques18: req.body.ques18,
+	q18o1: req.body.q18o1,
+	q18o2: req.body.q18o2,
+	q18o3: req.body.q18o3,
+	q18o4: req.body.q18o4,
+	q18cans: req.body.q18cans,
+	ques19: req.body.ques19,
+	q19o1: req.body.q19o1,
+	q19o2: req.body.q19o2,
+	q19o3: req.body.q19o3,
+	q19o4: req.body.q19o4,
+	q19cans: req.body.q19cans,
+	ques20: req.body.ques20,
+	q20o1: req.body.q20o1,
+	q20o2: req.body.q20o2,
+	q20o3: req.body.q20o3,
+	q20o4: req.body.q20o4,
+	q20cans: req.body.q20cans,
+	codeQuestion: req.body.codeQuestion,
+	sampleTest1: req.body.sampleTest1,
+	sampleTest2: req.body.sampleTest2,
+	CodeAns: req.body.CodeAns
+    });
+    ab.save();
+    res.send("test created suucessfully"+req.body.TestID+" "+req.body.ExamPassword);
+})
+app.post("/resumeanalysis",function(req,res){
+    
+    var a= parseInt(req.body.check);
+    //a=parseInt(a);
+    console.log(a);
+    console.log(typeof(a));
+    resume.findOne({id: a}).then((stud)=>{
+        //console.log(stud);
+        if(stud){
+            res.render("displayresume.ejs",{ab: stud});
+        }
+        
+    })
+    
+
+})
+app.post("/test1",function(req,res){
+   /*  const id1=req.body.TestID;
+    const password=req.body.password;
+    test.findOne({id: id1}).then((stud)=>{
+        if(stud.ExamPassword===password){
+            res.render("test2.ejs",{ab: stud});
+        }
+        else{
+            res.redirect("/taketest");
+        }
+    }); */
+res.render("test2.ejs");
+})
+app.get("/taketest",function(req,res){
+    res.render("test1.ejs");
+})
+app.get("/training",function(req,res){
+    res.render("training.ejs");
+})
+app.get("/createtest",function(req,res){
+    res.render("createtest.ejs");
 })
 app.get("/create_resume",function(req,res){
     res.render("create_resume.ejs");

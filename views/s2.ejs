@@ -299,6 +299,7 @@
                                             <th> Email </th>
                                             <th> 10th Criteria </th>
                                             <th> 12th Criteria </th>
+                                            <th> Resume analysis </th>
                                             <th> Status </th>
                                             
                                         </tr>
@@ -317,6 +318,14 @@
                                             <td> <div class="data"> <%= q[i].email %></div> </td>
                                             <td> <div class="data"> <%= q[i].per10 %></div> </td>
                                             <td> <div class="data"> <%= q[i].per12 %></div> </td>
+                                            <td>
+                                                <div class="data"> 
+                                                    <form action="/resumeanalysis" method="post"> 
+                                                  
+                                                        <input type="checkbox" onchange="this.form.submit()" name="check" value="<%= q[i].id %>">
+                                                </form> 
+                                            </div>
+                                            </td>
                                            
                                             <td>
                                                 <div class="data"> 
@@ -332,6 +341,7 @@
                                                   
                                                 <input type="checkbox" onchange="this.form.submit()" name="check" value="Selected">Select
                                         </form> 
+                                        <br><%= q[i].status %>
 
                                                 </div>
                                             </td>
