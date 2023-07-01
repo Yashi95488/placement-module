@@ -1,1 +1,2 @@
 # major-project
+In this project, we've included a function that lets students know when a firm is doing a placement drive. Additionally, they are aware of the requirements and qualifications for the specific firm. We give the business the student resume data that have been assessed so that it may arrange it in accordance with its standards and make suggestions. Additionally, offer a single user interface so that, throughout the placement exam period, students don't have any connection or system environment problems.
